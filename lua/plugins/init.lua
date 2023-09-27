@@ -16,7 +16,7 @@ install_packer()
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins/init.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -34,6 +34,14 @@ return require 'packer'.startup(function(use)
   use 'rafamadriz/friendly-snippets'
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
+  use {"nvim-neo-tree/neo-tree.nvim", branch = "v3.x", requires = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim"
+  }}
+  use "nvim-lualine/lualine.nvim"
+  use "lewis6991/gitsigns.nvim"
+  use "romgrk/barbar.nvim"
 
   require "plugins.configs"
 end)

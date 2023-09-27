@@ -22,6 +22,12 @@ vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
+-- Plugins
+vim.keymap.set('n', '<D-b>', ':Neotree toggle<CR>', opts)
+vim.keymap.set('n', '<D-s>', ':w<CR>', opts)
+vim.keymap.set('n', '<A-,>', ':BufferPrevious<CR>', opts)
+vim.keymap.set('n', '<A-.>', ':BufferNext<CR>', opts)
+
 -----------------
 -- Visual mode --
 -----------------
