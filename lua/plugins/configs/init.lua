@@ -1,0 +1,5 @@
+require "plugins.configs.neoscroll-nvim"
+require "plugins.configs.lsp-config"
+require "plugins.configs.diagnostic"
+require "plugins.configs.auto-completion"
+require "plugins.configs.help-window-config"
