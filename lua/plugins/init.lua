@@ -5,7 +5,7 @@ local function install_packer()
   if is_installed_packer then
     return
   end
-  
+
   vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
   vim.cmd [[ packadd packer.nvim ]]
 end
@@ -43,7 +43,13 @@ return require 'packer'.startup(function(use)
   use "lewis6991/gitsigns.nvim"
   -- use "romgrk/barbar.nvim"
   use "kylechui/nvim-surround"
-  use "akinsho/toggleterm.nvim"
+  use "akinsho/toggleterm.nvim" 
+  use({
+    "kdheepak/lazygit.nvim",
+    requires = {
+        "nvim-lua/plenary.nvim",
+    },
+  })
 
   require "plugins.configs"
 end)
