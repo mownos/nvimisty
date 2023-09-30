@@ -15,7 +15,12 @@ lsp_default_config.capabilities = vim.tbl_deep_extend(
 
 -- Enable language servers
 require 'mason'.setup()
-require 'mason-lspconfig'.setup()
+require 'mason-lspconfig'.setup({
+  automatic_installation = true
+})
+
+
+lspconfig.tsserver.setup({})
 lspconfig.lua_ls.setup({
   single_file_support = true,
   flags = {
