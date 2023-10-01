@@ -51,6 +51,7 @@ return require 'packer'.startup(function(use)
     },
   })
   use 'akinsho/bufferline.nvim'
+  use 'mhartington/formatter.nvim'
 
   require "plugins.configs"
 end)
