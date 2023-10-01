@@ -43,13 +43,14 @@ return require 'packer'.startup(function(use)
   use "lewis6991/gitsigns.nvim"
   -- use "romgrk/barbar.nvim"
   use "kylechui/nvim-surround"
-  use "akinsho/toggleterm.nvim" 
+  use "akinsho/toggleterm.nvim"
   use({
     "kdheepak/lazygit.nvim",
     requires = {
         "nvim-lua/plenary.nvim",
     },
   })
+  use 'akinsho/bufferline.nvim'
 
   require "plugins.configs"
 end)
