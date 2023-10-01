@@ -1,5 +1,12 @@
 local util = require("formatter.util")
 
+vim.cmd([[
+  augroup FormatAutogroup
+    autocmd!
+    autocmd BufWritePost * FormatWrite
+  augroup END
+]])
+
 require("formatter").setup({
 	logging = true,
 	log_level = vim.log.levels.WARN,
