@@ -34,6 +34,9 @@ vim.keymap.set('n', '<A-c>', ':BufferClose<CR>', opts)
 -- ToggleTerm plugin 
 vim.keymap.set('n', '<C-t>', ':ToggleTerm<CR>', opts)
 
+-- LazyGit
+vim.keymap.set('n', '<C-g>', ':LazyGit<CR>', opts)
+
 -----------------
 -- Visual mode --
 -----------------
