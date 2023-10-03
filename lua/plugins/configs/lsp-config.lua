@@ -16,7 +16,6 @@ require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
 
-lspconfig.tsserver.setup({})
 lspconfig.lua_ls.setup({
 	single_file_support = true,
 	flags = {

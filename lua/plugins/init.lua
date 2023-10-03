@@ -45,7 +45,6 @@ return require("packer").startup(function(use)
 	})
 	use("nvim-lualine/lualine.nvim")
 	use("lewis6991/gitsigns.nvim")
-	-- use "romgrk/barbar.nvim"
 	use("kylechui/nvim-surround")
 	use("akinsho/toggleterm.nvim")
 	use({
