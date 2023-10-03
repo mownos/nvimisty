@@ -2,6 +2,9 @@ local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local lsp_default_config = lspconfig.util.default_config
 local snippet = require("luasnip.loaders.from_vscode")
+local import_util = require("utils.import")
+
+local current_path = (...):match("(.-)[^%.]+$")
 
 -- Snippet configuration
 snippet.lazy_load()
@@ -16,12 +19,7 @@ require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
 
-lspconfig.lua_ls.setup({
-	single_file_support = true,
-	flags = {
-		debounce_text_changes = 150,
-	},
-})
+import_util.require_dir("./ls-configs/", current_path .. "ls-configs.")
 
 -- Language server keybindings
 vim.api.nvim_create_autocmd("LspAttach", {
