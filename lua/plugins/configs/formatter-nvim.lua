@@ -1,5 +1,3 @@
-local util = require("formatter.util")
-
 vim.cmd([[
   augroup FormatAutogroup
     autocmd!
@@ -14,6 +12,17 @@ require("formatter").setup({
 	filetype = {
 		lua = {
 			require("formatter.filetypes.lua").stylua,
+		},
+		cpp = {
+			function()
+				return {
+					exe = "clang-format",
+					args = {
+						'-style="{BasedOnStyle: llvm, IndentWidth: 2}"',
+					},
+					stdin = true,
+				}
+			end,
 		},
 	},
 
