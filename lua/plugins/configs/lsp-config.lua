@@ -25,3 +25,4 @@ local language_configs = import_util.require_dir(ls_configs_path, "plugins.confi
 
 lspconfig.lua_ls.setup(language_configs.lua)
 lspconfig.tsserver.setup(language_configs.tsserver)
+lspconfig.clangd.setup({})
