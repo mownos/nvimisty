@@ -1,6 +1,5 @@
 local io = require("io")
 local table_util = require("utils.table")
-local path_util = require("utils.path")
 
 local import_utils = {}
 
