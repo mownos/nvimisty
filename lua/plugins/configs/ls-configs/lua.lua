@@ -1,8 +1,10 @@
-local lspconfig = require("lspconfig")
+local config = {}
 
-lspconfig.lua_ls.setup({
+config.lua = {
 	single_file_support = true,
 	flags = {
 		debounce_text_changes = 150,
 	},
-})
+}
+
+return config
