@@ -1,9 +1,12 @@
 local create_prettier_configs = require("plugins.configs.formatter-configs.prettier")
+local formatter_util = require("utils.formatter")
 
 local prettier_configs =
 	create_prettier_configs.apply({ "typescript", "typescriptreact", "javascript", "javascriptreact", "json" })
 
-print(vim.inspect(prettier_configs.typescript))
+local language_configs = {
+	prettier_configs,
+}
 
 vim.cmd([[
   augroup FormatAutogroup
@@ -12,7 +15,7 @@ vim.cmd([[
   augroup END
 ]])
 
-require("formatter").setup({
+require("formatter").setup(formatter_util.merge_filetypes({
 	logging = true,
 	log_level = vim.log.levels.WARN,
 
@@ -37,4 +40,4 @@ require("formatter").setup({
 	["*"] = {
 		require("formatter.filetypes.any").remove_trailing_whitespace,
 	},
-})
+}, language_configs))
