@@ -43,7 +43,7 @@ bufferline.setup({
 		},
 	},
 	options = {
-    separator_style = 'thin',
+		separator_style = "thin",
 		offsets = {
 			{
 				filetype = "neo-tree",
