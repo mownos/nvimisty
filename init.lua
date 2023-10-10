@@ -1,6 +1,6 @@
 require("options")
 require("lua-options")
-require("colorscheme")
 require("neovide-options")
 require("keymaps")
 require("plugins")
+require("colorscheme")
