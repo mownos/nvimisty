@@ -1,4 +1,5 @@
 require("options")
+require("kitty-options")
 require("lua-options")
 require("neovide-options")
 require("keymaps")
