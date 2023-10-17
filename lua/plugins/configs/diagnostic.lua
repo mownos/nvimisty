@@ -15,6 +15,7 @@ vim.diagnostic.config({
 	virtual_text = {
 		prefix = "",
 	},
+	underline = true,
 	severity_sort = true,
 	update_in_insert = true,
 	float = {

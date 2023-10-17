@@ -1,12 +1,49 @@
+local smart_splits = require("smart-splits")
+
 require("legendary").setup({
 	lazy_nvim = {
 		auto_register = true,
 	},
 	keymaps = {
-		{ "<D-p>", ":Legendary<CR>", descrption = "Find commands using Legendary" },
-		{ "<D-o>", ":Telescope find_files<CR>", descrption = "Find files via filename suing Telescope" },
-		{ "<C-f>", ":Telescope current_buffer_fuzzy_find<CR>", "Find content in current buffer using Telescope" },
-		{ "<D-f>", ":Telescope live_grep<CR>", "Global match according regex in whole project using Telescope" },
+		{ "<D-p>", ":Legendary<CR>", description = "Find commands using Legendary" },
+		{ "<D-o>", ":Telescope find_files<CR>", description = "Find files via filename suing Telescope" },
+		{
+			"<C-f>",
+			":Telescope current_buffer_fuzzy_find<CR>",
+			description = "Find content in current buffer using Telescope",
+		},
+		{
+			"<D-f>",
+			":Telescope live_grep<CR>",
+			description = "Global match according regex in whole project using Telescope",
+		},
+		{ "<C-h>", smart_splits.move_cursor_left, description = "Move cursor left" },
+		{ "<C-l>", smart_splits.move_cursor_right, description = "Move cursor right" },
+		{ "<C-j>", smart_splits.move_cursor_down, description = "Move cursor down" },
+		{ "<C-k>", smart_splits.move_cursor_up, description = "Move cursor up" },
+		{ "<C-Up>", smart_splits.resize_up, description = "Resize split window by top" },
+		{ "<C-Down>", smart_splits.resize_down, description = "Resize split window by down" },
+		{ "<C-Left>", smart_splits.resize_left, description = "Resize split window by left" },
+		{ "<C-Right>", smart_splits.resize_right, description = "Resize split window by tight" },
+		{ "<C-\\>", {
+			n = ":ToggleTerm<CR>",
+			t = "<C-\\><C-n>",
+		}, description = "Exit terminal mode" },
+		{
+			"<C-t>h",
+			":ToggleTerm size=40 direction=horizontal<CR>",
+			description = "Toggle intergrate horizontal terminal",
+		},
+		{
+			"<C-t>v",
+			":ToggleTerm size=40 direction=vertical<CR>",
+			description = "Toggle intergrate vertical terminal",
+		},
+		{
+			"<C-t>f",
+			":ToggleTerm direction=float<CR>",
+			description = "Toggle integrate float terminal",
+		},
 	},
 	scratchpad = {
 		view = "float",

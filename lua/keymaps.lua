@@ -1,10 +1,10 @@
 function get_cursor_char()
 	local win = vim.api.nvim_get_current_win()
 	local _, col = vim.api.nvim_win_get_cursor(win)
---	local char = vim.api.nvim_get_current_line():sub(col + 1, col + 1)
+	--	local char = vim.api.nvim_get_current_line():sub(col + 1, col + 1)
 
 	-- print(vim.inspect(t))
-  print(col)
+	print(col)
 end
 
 -- define common options
@@ -24,12 +24,6 @@ vim.keymap.set("n", "<Enter>", function()
 	get_cursor_char()
 end)
 
--- Better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-
 -- Resize with arrows
 vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
 vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -39,9 +33,6 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Plugins
 vim.keymap.set("n", "<D-b>", ":Neotree toggle<CR>", opts)
 vim.keymap.set("n", "<D-s>", ":w<CR>", opts)
-
--- ToggleTerm plugin
-vim.keymap.set("n", "<C-t>", ":ToggleTerm<CR>", opts)
 
 -- LazyGit
 vim.keymap.set("n", "<C-g>", ":LazyGit<CR>", opts)
