@@ -2,6 +2,7 @@ local special_icons = require("plugins.configs.neotree-configs.special-icons")
 local highlights = require("neo-tree.ui.highlights")
 
 require("neo-tree").setup({
+  hide_root_node = true,
 	close_if_last_window = true,
 	enable_git_status = true,
 	source_selector = {

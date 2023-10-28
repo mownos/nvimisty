@@ -9,9 +9,17 @@ require("lazy").setup({
 		"olimorris/onedarkpro.nvim",
 		priority = constants.MAX_PRIORITY,
 	},
+	{
+		"willothy/veil.nvim",
+		lazy = true,
+	},
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"karb94/neoscroll.nvim",
 	"petertriho/nvim-scrollbar",
+
+	"nvim-telescope/telescope-file-browser.nvim",
+	"ziontee113/icon-picker.nvim",
+	"glepnir/galaxyline.nvim",
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/nvim-cmp",
@@ -34,7 +42,6 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 		},
 	},
-	-- "nvim-lualine/lualine.nvim",
 	"lewis6991/gitsigns.nvim",
 	"kylechui/nvim-surround",
 	"akinsho/toggleterm.nvim",
@@ -44,7 +51,6 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 		},
 	},
-	--	"akinsho/bufferline.nvim",
 	"mhartington/formatter.nvim",
 	"mrjones2014/smart-splits.nvim",
 	{

@@ -5,6 +5,7 @@ require("legendary").setup({
 		auto_register = true,
 	},
 	keymaps = {
+		{ "<Leader><Leader>i", ":IconPickerNormal<CR>", description = "Pick icons" },
 		{ "<D-p>", ":Legendary<CR>", description = "Find commands using Legendary" },
 		{ "<D-o>", ":Telescope find_files<CR>", description = "Find files via filename suing Telescope" },
 		{
@@ -56,9 +57,9 @@ require("legendary").setup({
 		{ "<D-b>", ":Neotree toggle<CR>", description = "Toggle neotree" },
 		{ "<D-s>", ":w<CR>", description = "Save current buffer" },
 		{ "<C-g>", ":LazyGit<CR>", description = "Toggle lazygit" },
-		{ "<A-h>", ":BufferLineCyclePrev<CR>", description = "Select the prev tab buffer" },
-		{ "<A-l>", ":BufferLineCycleNext<CR>", description = "Select the next tab buffer" },
-		{ "<A-c>", ":BufferLinePickClose<CR>", description = "" },
+		{ "<D-a>", { n = "gg^vG$" }, description = "Select whole buffer content" },
+		{ "<A-h>", { n = "<Plug>(cokeline-focus-prev)" }, description = "Switch to the previous tab" },
+		{ "<A-l>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next tab" },
 	},
 	scratchpad = {
 		view = "float",

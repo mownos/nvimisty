@@ -17,7 +17,6 @@ local opts = {
 -- Normal mode --
 -----------------
 -- Delete without cut
-vim.keymap.set("n", "dq", '"_dd')
 
 -- Bracket
 vim.keymap.set("n", "<Enter>", function()
