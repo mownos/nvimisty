@@ -1,8 +1,9 @@
 -- Hint: use `:h <option>` to figure out the meaning if needed
-vim.opt.clipboard = 'unnamedplus' -- use system clipboard
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-vim.opt.mouse = 'a' -- allow the mouse to be used in Nvim
+vim.opt.clipboard = "unnamedplus" -- use system clipboard
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.mouse = "a" -- allow the mouse to be used in Nvim
 
+vim.opt.hidden = false
 -- Tab
 vim.opt.tabstop = 2 -- number of visual spaces per TAB
 vim.opt.softtabstop = 2 -- number of spacesin tab when editing

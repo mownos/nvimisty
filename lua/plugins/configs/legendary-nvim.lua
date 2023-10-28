@@ -44,6 +44,21 @@ require("legendary").setup({
 			":ToggleTerm direction=float<CR>",
 			description = "Toggle integrate float terminal",
 		},
+		{
+			"r",
+			{ v = '"_dp' },
+		},
+		{
+			"s",
+			{ v = '"_di' },
+			description = "Delete content avoid put in clipboard",
+		},
+		{ "<D-b>", ":Neotree toggle<CR>", description = "Toggle neotree" },
+		{ "<D-s>", ":w<CR>", description = "Save current buffer" },
+		{ "<C-g>", ":LazyGit<CR>", description = "Toggle lazygit" },
+		{ "<A-h>", ":BufferLineCyclePrev<CR>", description = "Select the prev tab buffer" },
+		{ "<A-l>", ":BufferLineCycleNext<CR>", description = "Select the next tab buffer" },
+		{ "<A-c>", ":BufferLinePickClose<CR>", description = "" },
 	},
 	scratchpad = {
 		view = "float",

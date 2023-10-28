@@ -24,6 +24,8 @@ require("lazy").setup({
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"nvim-lua/plenary.nvim",
+	"willothy/nvim-cokeline",
+	"stevearc/resession.nvim",
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -42,7 +44,7 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 		},
 	},
-	"akinsho/bufferline.nvim",
+	--	"akinsho/bufferline.nvim",
 	"mhartington/formatter.nvim",
 	"mrjones2014/smart-splits.nvim",
 	{
@@ -58,6 +60,8 @@ require("lazy").setup({
 			"stevearc/dressing.nvim",
 		},
 	},
+	"nvim-telescope/telescope-fzf-native.nvim",
+	"Bekaboo/dropbar.nvim",
 })
 
 -- setup treesitter

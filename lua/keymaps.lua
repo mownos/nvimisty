@@ -24,23 +24,16 @@ vim.keymap.set("n", "<Enter>", function()
 	get_cursor_char()
 end)
 
--- Resize with arrows
-vim.keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
-vim.keymap.set("n", "<C-Down>", ":resize +2<CR>", opts)
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
-
 -- Plugins
-vim.keymap.set("n", "<D-b>", ":Neotree toggle<CR>", opts)
 vim.keymap.set("n", "<D-s>", ":w<CR>", opts)
 
 -- LazyGit
 vim.keymap.set("n", "<C-g>", ":LazyGit<CR>", opts)
 
 -- Bufferline
-vim.keymap.set("n", "<A-h>", ":BufferLineCyclePrev<CR>")
-vim.keymap.set("n", "<A-l>", ":BufferLineCycleNext<CR>")
-vim.keymap.set("n", "<A-c>", ":BufferLinePickClose<CR>")
+-- vim.keymap.set("n", "<A-h>", ":BufferLineCyclePrev<CR>")
+-- vim.kemap.set("n", "<A-l>", ":BufferLineCycleNext<CR>")
+-- vim.keymap.set("n", "<A-c>", ":BufferLinePickClose<CR>")
 
 -----------------
 -- Visual mode --
