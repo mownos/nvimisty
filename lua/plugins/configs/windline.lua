@@ -1,3 +1,4 @@
+local startup_utils = require("utils.startup")
 local windline = require("windline")
 local state = _G.WindLine.state
 local lsp_comps = require("windline.components.lsp")
@@ -149,8 +150,10 @@ local default = {
 	inactive = {},
 }
 
-windline.setup({
-	statuslines = {
-		default,
-	},
-})
+startup_utils.with_safe_startup_page(function()
+	windline.setup({
+		statuslines = {
+			default,
+		},
+	})
+end)
