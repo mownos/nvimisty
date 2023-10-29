@@ -50,7 +50,7 @@ veil.setup({
 				end,
 			},
 		}),
-		builtin.sections.oldfiles(),
+		-- builtin.sections.oldfiles(),
 	},
 	mappings = {},
 	startup = true,

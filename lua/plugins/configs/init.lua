@@ -1,3 +1,4 @@
+require("plugins.configs.resession-nvim")
 require("plugins.configs.galaxyline-nvim")
 require("plugins.configs.web-devicons-nvim")
 require("plugins.configs.neoscroll-nvim")

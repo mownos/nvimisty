@@ -16,7 +16,6 @@ require("lazy").setup({
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"karb94/neoscroll.nvim",
 	"petertriho/nvim-scrollbar",
-
 	"nvim-telescope/telescope-file-browser.nvim",
 	"ziontee113/icon-picker.nvim",
 	"glepnir/galaxyline.nvim",

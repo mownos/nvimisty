@@ -1,4 +1,6 @@
 local smart_splits = require("smart-splits")
+local resession = require("resession")
+local cokeline_buffers = require("cokeline.buffers")
 
 require("legendary").setup({
 	lazy_nvim = {
@@ -60,6 +62,18 @@ require("legendary").setup({
 		{ "<D-a>", { n = "gg^vG$" }, description = "Select whole buffer content" },
 		{ "<A-h>", { n = "<Plug>(cokeline-focus-prev)" }, description = "Switch to the previous tab" },
 		{ "<A-l>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next tab" },
+		{
+			"<A-c>",
+			{
+				n = function()
+					cokeline_buffers.get_current():delete()
+				end,
+			},
+			description = "Close current buffer",
+		},
+		{ "<leader>ss", { n = resession.save }, description = "Save current session" },
+		{ "<leader>sl", { n = resession.load }, description = "Load previous session" },
+		{ "<leader>sd", { n = resession.delete }, description = "Delete previous session" },
 	},
 	scratchpad = {
 		view = "float",
