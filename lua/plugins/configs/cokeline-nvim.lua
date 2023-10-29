@@ -48,6 +48,9 @@ startup_utils.with_safe_startup_page(function()
 					return buffer.filename .. " "
 				end,
 				fg = colors.buffer_line_fg,
+				italic = function(buffer)
+					return buffer.is_modified
+				end,
 				-- 	underline = function(buffer)
 				-- 		return buffer.is_hovered and not buffer.is_focused
 				-- 	end,
