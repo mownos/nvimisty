@@ -23,11 +23,6 @@ startup_utils.with_safe_startup_page(function()
 			bg = function(buffer)
 				return buffer.is_focused and colors.primary_color or get_hex("ColorColumn", "bg")
 			end,
-			--	on_mouse_enter = function(buffer)
-			--		if buffer.is_hovered then
-			--			buffer.bg = colors.primary_color
-			--		end
-			--	end,
 		},
 		components = {
 			{
@@ -57,7 +52,7 @@ startup_utils.with_safe_startup_page(function()
 			},
 			{
 				text = function(buffer)
-					return buffer.is_modified and "" or ""
+					return buffer.is_modified and "" or ""
 				end,
 				fg = function(buffer)
 					return buffer.is_modified and colors.focused_yellow or colors.buffer_line_fg

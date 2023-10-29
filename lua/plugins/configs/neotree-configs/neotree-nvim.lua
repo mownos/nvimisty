@@ -2,7 +2,7 @@ local special_icons = require("plugins.configs.neotree-configs.special-icons")
 local highlights = require("neo-tree.ui.highlights")
 
 require("neo-tree").setup({
-  hide_root_node = true,
+	hide_root_node = true,
 	close_if_last_window = true,
 	enable_git_status = true,
 	source_selector = {
@@ -23,6 +23,20 @@ require("neo-tree").setup({
 			expander_collapsed = "",
 			expander_highlight = "NeoTreeExpander",
 			expander_expanded = "",
+		},
+		git_status = {
+			symbols = {
+				added = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
+				modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+				deleted = "✖", -- this can only be used in the git_status source
+				renamed = "󰁕", -- this can only be used in the git_status source
+				-- Status type
+				untracked = "",
+				ignored = "",
+				unstaged = "󰄱",
+				staged = "",
+				conflict = "",
+			},
 		},
 	},
 	filesystem = {

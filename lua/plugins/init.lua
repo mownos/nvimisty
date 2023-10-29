@@ -18,7 +18,6 @@ require("lazy").setup({
 	"petertriho/nvim-scrollbar",
 	"nvim-telescope/telescope-file-browser.nvim",
 	"ziontee113/icon-picker.nvim",
-	"glepnir/galaxyline.nvim",
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/nvim-cmp",
@@ -67,6 +66,7 @@ require("lazy").setup({
 	},
 	"nvim-telescope/telescope-fzf-native.nvim",
 	"Bekaboo/dropbar.nvim",
+	"windwp/windline.nvim",
 })
 
 -- setup treesitter
