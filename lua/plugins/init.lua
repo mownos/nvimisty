@@ -67,6 +67,7 @@ require("lazy").setup({
 	"nvim-telescope/telescope-fzf-native.nvim",
 	"Bekaboo/dropbar.nvim",
 	"windwp/windline.nvim",
+	"yamatsum/nvim-cursorline",
 })
 
 -- setup treesitter
