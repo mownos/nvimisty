@@ -7,6 +7,34 @@ local select_opts = {
 	behavior = cmp.SelectBehavior.Select,
 }
 
+local kind_icons = {
+	Text = "",
+	Method = "󰆧",
+	Function = "󰊕",
+	Constructor = "",
+	Field = "󰇽",
+	Variable = "󰂡",
+	Class = "󰠱",
+	Interface = "",
+	Module = "",
+	Property = "󰜢",
+	Unit = "",
+	Value = "󰎠",
+	Enum = "",
+	Keyword = "󰌋",
+	Snippet = "",
+	Color = "󰏘",
+	File = "󰈙",
+	Reference = "",
+	Folder = "󰉋",
+	EnumMember = "",
+	Constant = "󰏿",
+	Struct = "",
+	Event = "",
+	Operator = "󰆕",
+	TypeParameter = "󰅲",
+}
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -21,6 +49,9 @@ cmp.setup({
 	},
 	window = {
 		documentation = cmp.config.window.bordered(),
+		completion = {
+			winhighlight = "Normal:CmpNormal",
+		},
 	},
 	formatting = {
 		fields = { "menu", "abbr", "kind" },
@@ -29,16 +60,18 @@ cmp.setup({
 				nvim_lsp = "λ",
 				luasnip = "⋗",
 				buffer = "Ω",
-				path = "*_",
+				path = "@",
 			}
 
+			item.kind = string.format("%s %s", kind_icons[item.kind], item.kind) -- This concatonates the icons with the name of the item kind
 			item.menu = menu_icon[entry.source.name]
+
 			return item
 		end,
 	},
 	mapping = {
-		["<Up>"] = cmp.mapping.select_prev_item(select_opts),
-		["<Down>"] = cmp.mapping.select_next_item(select_opts),
+		["<A-k>"] = cmp.mapping.select_prev_item(select_opts),
+		["<A-j>"] = cmp.mapping.select_next_item(select_opts),
 		["<C-p>"] = cmp.mapping.select_prev_item(select_opts),
 		["<C-n>"] = cmp.mapping.select_next_item(select_opts),
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
@@ -71,15 +104,15 @@ cmp.setup({
 			end
 		end, { "i", "s" }),
 		["<Tab>"] = cmp.mapping(function(fallback)
-			local col = vim.fn.col(".") - 1
+			if not cmp.visible() then
+				return
+			end
 
-			if cmp.visible() then
-				cmp.select_next_item(select_opts)
+			if cmp.get_active_entry() then
 				cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
-			elseif col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
-				fallback()
 			else
-				cmp.complete()
+				cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
+				cmp.select_next_item(select_opts)
 			end
 		end, { "i", "s" }),
 
