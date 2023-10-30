@@ -7,6 +7,11 @@ require("legendary").setup({
 		auto_register = true,
 	},
 	commands = {
+		{ ":DiffviewFileHistory %", description = "View curent buffer git changes history" },
+		{ ":SwapBufferLeft", smart_splits.swap_buf_left, description = "Swap buffer to left" },
+		{ ":SwapBufferRight", smart_splits.swap_buf_right, description = "Swap buffer to right" },
+		{ ":SwapBufferUp", smart_splits.swap_buf_up, description = "Swap buffer to up" },
+		{ ":SwapBufferDown", smart_splits.swap_buf_down, description = "Swap buffer to down" },
 		{ ":vertical terminal", description = "New terminal vertically" },
 		{ ":horizontal terminal", description = "New terminal horizontally" },
 		{ ":terminal", description = "Open new terminal in new page" },
@@ -17,6 +22,8 @@ require("legendary").setup({
 		{ ":Telescope notify", description = "View notify history" },
 	},
 	keymaps = {
+		{ "do", { n = ":DiffviewOpen<CR>" }, description = "Open diffview compare current buffer content with HEAD~1" },
+		{ "dq", { n = ":DiffviewClose<CR>" }, description = "Close diffview" },
 		{ "q", { n = ":nohlsearch<CR>" }, description = "Exit hlsearch mode" },
 		{ "<C-b>", { n = "<C-w>p" }, description = "Move back" },
 		{ "<C-,>", { n = "<C-w>200h" }, "Move to leftmost window" },
