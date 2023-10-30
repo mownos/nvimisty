@@ -50,20 +50,20 @@ cmp.setup({
 	window = {
 		documentation = cmp.config.window.bordered(),
 		completion = {
-			winhighlight = "Normal:CmpNormal",
+			winhighlight = "Normal:CmpNormal,CursorLine:CmpCursorLine",
 		},
 	},
 	formatting = {
 		fields = { "menu", "abbr", "kind" },
 		format = function(entry, item)
 			local menu_icon = {
-				nvim_lsp = "λ",
-				luasnip = "⋗",
-				buffer = "Ω",
-				path = "@",
+				nvim_lsp = "λ LSP",
+				luasnip = "⋗ Luasnip",
+				buffer = "Ω Buffer",
+				path = "@ Path",
 			}
 
-			item.kind = string.format("%s %s", kind_icons[item.kind], item.kind) -- This concatonates the icons with the name of the item kind
+			item.kind = string.format("%s %s", kind_icons[item.kind], item.kind)
 			item.menu = menu_icon[entry.source.name]
 
 			return item
