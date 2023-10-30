@@ -12,12 +12,29 @@ require("diffview").setup({
 	},
 	keymaps = {
 		file_panel = {
-			-- 			{ "n", "c", actions.open_commit_log, { desc = "asd" } },
 			{
 				"n",
-				"<space>",
-				actions.toggle_stage_entry,
-				{ desc = "Stage / unstage the selected entry" },
+				"r",
+				actions.refresh_files,
+				{ desc = "Update stats and entries in the file list" },
+			},
+			{
+				"n",
+				"j",
+				function()
+					actions.next_entry()
+					actions.select_entry()
+				end,
+				{ desc = "Bring the cursor to the next file entry" },
+			},
+			{
+				"n",
+				"k",
+				function()
+					actions.prev_entry()
+					actions.select_entry()
+				end,
+				{ desc = "Bring the cursor to the previous file entry" },
 			},
 		},
 	},
