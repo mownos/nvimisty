@@ -21,6 +21,7 @@ require("lazy").setup({
 		cmd = "Copilot",
 		event = "InsertEnter",
 	},
+	"numToStr/Comment.nvim",
 	"kevinhwang91/nvim-hlslens",
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-file-browser.nvim",
