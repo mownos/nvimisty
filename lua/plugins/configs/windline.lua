@@ -62,7 +62,7 @@ local vi_mode = {
 		Replace = { "black", "pink", "bold" },
 		Command = { "black", "magenta", "bold" },
 		NormalBefore = { "green", "black" },
-		InsertBefore = { "yellow", "black" },
+
 		VisualBefore = { "blue_light", "black" },
 		ReplaceBefore = { "pink", "black" },
 		CommandBefore = { "magenta", "black" },
@@ -142,6 +142,9 @@ local default = {
 		space,
 		space,
 		formatter,
+		space,
+		space,
+		{ " ", { "PureWhite", "PrimaryColor" } },
 		space,
 		space,
 		progress_battery,

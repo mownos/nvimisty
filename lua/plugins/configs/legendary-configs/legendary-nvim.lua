@@ -6,7 +6,21 @@ require("legendary").setup({
 	lazy_nvim = {
 		auto_register = true,
 	},
+	commands = {
+		{ ":vertical terminal", description = "New terminal vertically" },
+		{ ":horizontal terminal", description = "New terminal horizontally" },
+		{ ":terminal", description = "Open new terminal in new page" },
+		{ ":SaveCurrentSession", resession.save, description = "Save current session" },
+		{ ":LoadPrevSession", resession.load, description = "Load previous session" },
+		{ ":DeletePrevSession", resession.delete, description = "Delete previous session" },
+		{ ":Copilot auth signin", description = "Sign Copilot" },
+		{ ":Telescope notify", description = "View notify history" },
+	},
 	keymaps = {
+		{ "q", { n = ":nohlsearch<CR>" }, description = "Exit hlsearch mode" },
+		{ "<C-b>", { n = "<C-w>p" }, description = "Move back" },
+		{ "<C-,>", { n = "<C-w>200h" }, "Move to leftmost window" },
+		{ "<C-.>", { n = "<C-w>200l" }, "Move to rightmost window" },
 		{ "<Leader><Leader>i", ":IconPickerNormal<CR>", description = "Pick icons" },
 		{ "<D-p>", ":Legendary<CR>", description = "Find commands using Legendary" },
 		{ "<D-o>", ":Telescope find_files<CR>", description = "Find files via filename suing Telescope" },
@@ -29,18 +43,17 @@ require("legendary").setup({
 		{ "<C-Left>", smart_splits.resize_left, description = "Resize split window by left" },
 		{ "<C-Right>", smart_splits.resize_right, description = "Resize split window by tight" },
 		{ "<C-\\>", {
-			n = ":ToggleTerm<CR>",
 			t = "<C-\\><C-n>",
 		}, description = "Exit terminal mode" },
 		{
 			"<C-t>h",
-			":ToggleTerm size=40 direction=horizontal<CR>",
-			description = "Toggle intergrate horizontal terminal",
+			":horizontal terminal",
+			description = "New intergrate horizontal terminal",
 		},
 		{
 			"<C-t>v",
 			":ToggleTerm size=40 direction=vertical<CR>",
-			description = "Toggle intergrate vertical terminal",
+			description = "New intergrate vertical terminal",
 		},
 		{
 			"<C-t>f",
@@ -66,14 +79,18 @@ require("legendary").setup({
 			"<A-c>",
 			{
 				n = function()
+					if vim.api.nvim_buf_get_option(0, "buftype") == "terminal" then
+						vim.api.nvim_buf_delete(0, {
+							force = true,
+						})
+						return
+					end
+
 					cokeline_buffers.get_current():delete()
 				end,
 			},
 			description = "Close current buffer",
 		},
-		{ "<leader>ss", { n = resession.save }, description = "Save current session" },
-		{ "<leader>sl", { n = resession.load }, description = "Load previous session" },
-		{ "<leader>sd", { n = resession.delete }, description = "Delete previous session" },
 	},
 	scratchpad = {
 		view = "float",

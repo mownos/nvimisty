@@ -30,3 +30,5 @@ vim.api.nvim_set_hl(0, "CmpItemKindProperty", { link = "CmpItemKindKeyword" })
 vim.api.nvim_set_hl(0, "CmpItemKindUnit", { link = "CmpItemKindKeyword" })
 -- cursorline
 vim.api.nvim_set_hl(0, "CmpCursorLine", { bg = "#e5c07b" })
+-- copilot
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })

@@ -33,6 +33,7 @@ local kind_icons = {
 	Event = "",
 	Operator = "󰆕",
 	TypeParameter = "󰅲",
+	Copilot = "",
 }
 
 cmp.setup({
@@ -42,10 +43,16 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "path" },
-		{ name = "nvim_lsp", keyword_length = 1 },
-		{ name = "buffer", keyword_length = 3 },
-		{ name = "luasnip", keyword_length = 2 },
+		{ name = "copilot", group_index = 2 },
+		-- Other Sources
+		{ name = "nvim_lsp", group_index = 2 },
+		{ name = "path", group_index = 2 },
+		{ name = "luasnip", group_index = 2 },
+		-- 	{ name = "path" },
+		-- 	{ name = "nvim_lsp", keyword_length = 1 },
+		-- 	{ name = "copilot", keyword_length = 2, group_index = 1 },
+		-- 	{ name = "luasnip", keyword_length = 3 },
+		-- 	{ name = "buffer", keyword_length = 4 },
 	},
 	window = {
 		documentation = cmp.config.window.bordered(),
@@ -57,10 +64,11 @@ cmp.setup({
 		fields = { "menu", "abbr", "kind" },
 		format = function(entry, item)
 			local menu_icon = {
-				nvim_lsp = "λ LSP",
-				luasnip = "⋗ Luasnip",
-				buffer = "Ω Buffer",
-				path = "@ Path",
+				nvim_lsp = "[λ LSP]",
+				luasnip = "[⋗ Luasnip]",
+				buffer = "[Ω Buffer]",
+				path = "[@ Path]",
+				copilot = "[ Copilot]",
 			}
 
 			item.kind = string.format("%s %s", kind_icons[item.kind], item.kind)

@@ -16,8 +16,18 @@ require("lazy").setup({
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"karb94/neoscroll.nvim",
 	"petertriho/nvim-scrollbar",
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+	},
+	"kevinhwang91/nvim-hlslens",
+	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-file-browser.nvim",
+	"rcarriga/nvim-notify",
+	"MunifTanjim/nui.nvim",
 	"ziontee113/icon-picker.nvim",
+	"zbirenbaum/copilot-cmp",
 	"neovim/nvim-lspconfig",
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/nvim-cmp",
@@ -37,12 +47,10 @@ require("lazy").setup({
 		branch = "v3.x",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
 		},
 	},
 	"lewis6991/gitsigns.nvim",
 	"kylechui/nvim-surround",
-	"akinsho/toggleterm.nvim",
 	{
 		"kdheepak/lazygit.nvim",
 		dependencies = {
@@ -57,10 +65,6 @@ require("lazy").setup({
 		priority = constants.MAX_PRIORITY,
 		lazy = false,
 		dependencies = {
-			{
-				"nvim-telescope/telescope.nvim",
-				branch = "0.1.x",
-			},
 			"stevearc/dressing.nvim",
 		},
 	},
