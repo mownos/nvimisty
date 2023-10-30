@@ -105,6 +105,7 @@ cmp.setup({
 		end, { "i", "s" }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if not cmp.visible() then
+				fallback()
 				return
 			end
 
