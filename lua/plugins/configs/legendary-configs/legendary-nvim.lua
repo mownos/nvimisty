@@ -53,21 +53,6 @@ require("legendary").setup({
 			t = "<C-\\><C-n>",
 		}, description = "Exit terminal mode" },
 		{
-			"<C-t>h",
-			":horizontal terminal",
-			description = "New intergrate horizontal terminal",
-		},
-		{
-			"<C-t>v",
-			":ToggleTerm size=40 direction=vertical<CR>",
-			description = "New intergrate vertical terminal",
-		},
-		{
-			"<C-t>f",
-			":ToggleTerm direction=float<CR>",
-			description = "Toggle integrate float terminal",
-		},
-		{
 			"r",
 			{ v = '"_dp' },
 		},
