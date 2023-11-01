@@ -1,6 +1,7 @@
 local smart_splits = require("smart-splits")
 local resession = require("resession")
 local cokeline_buffers = require("cokeline.buffers")
+local neoscroll = require("neoscroll")
 
 require("legendary").setup({
 	lazy_nvim = {
@@ -25,17 +26,12 @@ require("legendary").setup({
 		{ "do", { n = ":DiffviewOpen<CR>" }, description = "Open diffview compare current buffer content with HEAD~1" },
 		{ "dq", { n = ":DiffviewClose<CR>" }, description = "Close diffview" },
 		{ "q", { n = ":nohlsearch<CR>" }, description = "Exit hlsearch mode" },
-		{ "<C-b>", { n = "<C-w>p" }, description = "Move back" },
+		{ "<A-b>", { n = "<C-w>p" }, description = "Move back" },
 		{ "<C-,>", { n = "<C-w>200h" }, "Move to leftmost window" },
 		{ "<C-.>", { n = "<C-w>200l" }, "Move to rightmost window" },
 		{ "<Leader><Leader>i", ":IconPickerNormal<CR>", description = "Pick icons" },
 		{ "<D-p>", ":Legendary<CR>", description = "Find commands using Legendary" },
 		{ "<D-o>", ":Telescope find_files<CR>", description = "Find files via filename suing Telescope" },
-		{
-			"<C-f>",
-			":Telescope current_buffer_fuzzy_find<CR>",
-			description = "Find content in current buffer using Telescope",
-		},
 		{
 			"<D-f>",
 			":Telescope live_grep<CR>",
