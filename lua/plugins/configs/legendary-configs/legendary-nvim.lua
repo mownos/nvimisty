@@ -1,7 +1,7 @@
 local smart_splits = require("smart-splits")
 local resession = require("resession")
 local cokeline_buffers = require("cokeline.buffers")
-local neoscroll = require("neoscroll")
+local edit_utils = require("utils.edit")
 
 require("legendary").setup({
 	lazy_nvim = {
@@ -23,6 +23,24 @@ require("legendary").setup({
 		{ ":Telescope notify", description = "View notify history" },
 	},
 	keymaps = {
+		{
+			"<ESC>",
+			{
+				i = function()
+					edit_utils.escape_in_symbol()
+				end,
+			},
+		},
+		{
+			"m",
+			{
+				n = function()
+					edit_utils.move_cursor_to_nearest_symbol()
+					vim.api.nvim_command("startinsert")
+				end,
+			},
+			description = "Move cursor in nearst quotes or brackets",
+		},
 		{ "do", { n = ":DiffviewOpen<CR>" }, description = "Open diffview compare current buffer content with HEAD~1" },
 		{ "dq", { n = ":DiffviewClose<CR>" }, description = "Close diffview" },
 		{ "q", { n = ":nohlsearch<CR>" }, description = "Exit hlsearch mode" },
@@ -57,6 +75,7 @@ require("legendary").setup({
 			{ v = '"_di' },
 			description = "Delete content avoid put in clipboard",
 		},
+		{ "<S-Enter>", { i = "<Enter><ESC>O" }, description = "Insert a newline" },
 		{ "<D-b>", ":Neotree toggle<CR>", description = "Toggle neotree" },
 		{ "<D-s>", ":w<CR>", description = "Save current buffer" },
 		{ "<C-g>", ":LazyGit<CR>", description = "Toggle lazygit" },
