@@ -23,6 +23,10 @@ require("mason-lspconfig").setup({
 local ls_configs_path = package.searchpath(..., package.path):match(".+/") .. "ls-configs"
 local language_configs = import_util.require_dir(ls_configs_path, "plugins.configs.ls-configs")
 
+if language_configs == nil then
+	error("Language configs not found")
+end
+
 lspconfig.lua_ls.setup(language_configs.lua)
 lspconfig.tsserver.setup(language_configs.tsserver)
 lspconfig.clangd.setup({})
