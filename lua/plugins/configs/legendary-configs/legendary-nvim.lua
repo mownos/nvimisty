@@ -23,6 +23,8 @@ require("legendary").setup({
 		{ ":Telescope notify", description = "View notify history" },
 	},
 	keymaps = {
+		{ "<A-,>", "<Plug>(cokeline-switch-prev)", description = "Switch prev buffer" },
+		{ "<A-.>", "<Plug>(cokeline-switch-next)", description = "Switch next buffer" },
 		{
 			"<ESC>",
 			{
@@ -82,6 +84,9 @@ require("legendary").setup({
 		{ "<D-a>", { n = "gg^vG$" }, description = "Select whole buffer content" },
 		{ "<A-h>", { n = "<Plug>(cokeline-focus-prev)" }, description = "Switch to the previous tab" },
 		{ "<A-l>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next tab" },
+		{ "<A-b>", { n = "<Plug>(cokeline-focus-prev)" }, description = "Switch to the previous buffer" },
+		{ "<A-f>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next buffer" },
+		{ "<A-b>", { n = "<C-o>" }, description = "Switch back buffer" },
 		{
 			"<A-c>",
 			{

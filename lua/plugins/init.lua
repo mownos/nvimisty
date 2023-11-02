@@ -26,6 +26,7 @@ require("lazy").setup({
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-file-browser.nvim",
 	"sindrets/diffview.nvim",
+	"windwp/nvim-ts-autotag",
 	"rcarriga/nvim-notify",
 	"MunifTanjim/nui.nvim",
 	"ziontee113/icon-picker.nvim",

@@ -67,6 +67,7 @@ function edit_utils.escape_in_symbol()
 		{ "{", "}" },
 		{ "[", "]" },
 		{ "(", ")" },
+		{ "<", ">" },
 	}
 	local cursor_pos = vim.api.nvim_win_get_cursor(0)
 	local current_line_content = vim.api.nvim_get_current_line()

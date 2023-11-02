@@ -5,7 +5,14 @@ function create_prettier_configs.apply(languages)
 
 	for _, language in ipairs(languages) do
 		formatter_configs[language] = {
-			require("formatter.filetypes." .. language).prettier,
+			function()
+				return {
+					exe = "prettierd",
+					args = { vim.api.nvim_buf_get_name(0) },
+					stdin = true,
+				}
+			end,
+			-- require("formatter.filetypes." .. language).prettier,
 		}
 	end
 

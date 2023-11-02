@@ -10,16 +10,3 @@ sign({ name = "DiagnosticSignError", text = "✘" })
 sign({ name = "DiagnosticSignWarn", text = "▲" })
 sign({ name = "DiagnosticSignHint", text = "⚑" })
 sign({ name = "DiagnosticSignInfo", text = "󰌵" })
-
-vim.diagnostic.config({
-	virtual_text = {
-		prefix = "",
-	},
-	underline = true,
-	severity_sort = true,
-	update_in_insert = true,
-	float = {
-		border = "rounded",
-		source = "always",
-	},
-})
