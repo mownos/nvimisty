@@ -9,7 +9,7 @@
 > This config is not yet perfected and work in progress, so there may be some bugs, you can report it through [Issues](https://github.com/mownos/nvimisty/issues)
 
 ## 🌟 Preview
-<img src="https://github.com/mownos/nvimisty/blob/main/doc/nvimisty-preview.png" />
+<img src="https://github.com/mownos/nvimisty/blob/main/doc/nvim-preview.png" />
 
 ## 📖 Features
 - Full LSP support like diagnostic and code hints with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
