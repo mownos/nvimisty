@@ -80,7 +80,7 @@ require("legendary").setup({
 		{ "<S-Enter>", { i = "<Enter><ESC>O" }, description = "Insert a newline" },
 		{ "<D-b>", ":Neotree toggle<CR>", description = "Toggle neotree" },
 		{ "<D-s>", ":w<CR>", description = "Save current buffer" },
-		{ "<C-g>", ":LazyGit<CR>", description = "Toggle lazygit" },
+		{ "<C-g>", ":Neogit kind=vsplit<CR>", description = "Toggle Neogit" },
 		{ "<D-a>", { n = "gg^vG$" }, description = "Select whole buffer content" },
 		{ "<A-h>", { n = "<Plug>(cokeline-focus-prev)" }, description = "Switch to the previous tab" },
 		{ "<A-l>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next tab" },
