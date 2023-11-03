@@ -30,7 +30,6 @@
 ## ⚡️ Requirements
 - [dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim#configuration) need Neovim 0.10.0 or higher version for better experience of winbar
 - [Nerd fonts](https://www.nerdfonts.com/) for beautiful icons and editor font.
-- [Lazygit](https://github.com/jesseduffield/lazygit) for git integration.
 - [Git](https://git-scm.com/) dependent on some Neovim Git integrated plugins.
 
 ## Install
