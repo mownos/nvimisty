@@ -28,6 +28,7 @@
 **Thanks to the amazing Neovim community for making the above things possible! I can't imagine rolling my own IDE without Neovim community.**
 
 ## ⚡️ Requirements
+- [dropbar.nvim](https://github.com/Bekaboo/dropbar.nvim#configuration) need Neovim 0.10.0 or higher version for better experience of winbar
 - [Nerd fonts](https://www.nerdfonts.com/) for beautiful icons and editor font.
 - [Lazygit](https://github.com/jesseduffield/lazygit) for git integration.
 - [Git](https://git-scm.com/) dependent on some Neovim Git integrated plugins.
@@ -53,7 +54,7 @@ nvim
 ```
 ## Mappings
 All key mappings and commands were defined in [/lua/plugins/configs/legendary-configs/legendary-nvim.lua](https://github.com/mownos/nvimisty/blob/main/lua/plugins/configs/legendary-configs/legendary-nvim.lua), press 
- `command + p` for list, , and you can update these keys anytime.
+ `⌘command + p` for list, , and you can update these keys anytime.
 
 ## LICENSE
 MIT
