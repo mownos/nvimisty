@@ -15,6 +15,7 @@ require("lazy").setup({
 	},
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 	"karb94/neoscroll.nvim",
+	"ibhagwan/fzf-lua",
 	"petertriho/nvim-scrollbar",
 	{
 		"zbirenbaum/copilot.lua",
@@ -54,12 +55,6 @@ require("lazy").setup({
 		},
 	},
 	"kylechui/nvim-surround",
-	{
-		"kdheepak/lazygit.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
 	"mhartington/formatter.nvim",
 	"mrjones2014/smart-splits.nvim",
 	{
@@ -75,6 +70,7 @@ require("lazy").setup({
 	"Bekaboo/dropbar.nvim",
 	"windwp/windline.nvim",
 	"yamatsum/nvim-cursorline",
+	"NeogitOrg/neogit",
 })
 
 -- setup treesitter
