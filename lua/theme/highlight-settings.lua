@@ -35,3 +35,9 @@ vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
 
 -- Git balme
 vim.api.nvim_set_hl(0, "CursorLineGitBlameStatus", { bg = "#2d313b", fg = "#5c6370" })
+
+-- Neogit
+vim.api.nvim_set_hl(0, "NeogitDiffAdd", { bg = "#238957" })
+vim.api.nvim_set_hl(0, "NeogitDiffAddHighlight", { bg = "#238957" })
+vim.api.nvim_set_hl(0, "NeogitDiffDelete", { bg = "#ae4a53" })
+vim.api.nvim_set_hl(0, "NeogitDiffDeleteHighlight", { bg = "#ae4a53" })
