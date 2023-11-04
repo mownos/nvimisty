@@ -3,22 +3,10 @@ local windline = require("windline")
 local state = _G.WindLine.state
 local lsp_comps = require("windline.components.lsp")
 local basic_components = require("windline.components.basic")
+local diagnostics_utils = require("utils.diagnostics")
 
 local MIN_WIDTH = 100
 local NORMAL_HIGHLIGHT = { "white", "PrimaryColor" }
-
-local get_diagnostics_count = function(bufnr)
-	bufnr = bufnr or 0
-	local diagnostics = vim.diagnostic.get(bufnr)
-	local count = { 0, 0, 0, 0 }
-	for _, diagnostic in ipairs(diagnostics) do
-		count[diagnostic.severity] = count[diagnostic.severity] + 1
-	end
-	return count[vim.diagnostic.severity.ERROR],
-		count[vim.diagnostic.severity.WARN],
-		count[vim.diagnostic.severity.INFO],
-		count[vim.diagnostic.severity.HINT]
-end
 
 local lsp_diagnos = {
 	name = "diagnostic",
@@ -43,7 +31,7 @@ local formatter = {
 		yellow_face = { "yellow", "PrimaryColor" },
 	},
 	text = function(bufnr)
-		local err_count = get_diagnostics_count(bufnr)
+		local err_count = diagnostics_utils.get_diagnostics_count(bufnr)
 		local icon = err_count == 0 and "󰱫 " or "󰱶 "
 
 		return {
