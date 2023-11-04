@@ -10,6 +10,15 @@ local colors = {
 
 startup_utils.with_safe_startup_page(function()
 	require("cokeline").setup({
+		sidebar = {
+			filetype = { "NvimTree", "neo-tree" },
+			components = {
+				{
+					text = "",
+					bg = "#1d1f23",
+				},
+			},
+		},
 		buffers = {
 			focus_on_delete = "prev",
 		},
@@ -17,11 +26,8 @@ startup_utils.with_safe_startup_page(function()
 			cycle_prev_next = true,
 		},
 		default_hl = {
-			fg = function(buffer)
-				return buffer.is_focused and get_hex("ColorColumn", "bg") or get_hex("Normal", "fg")
-			end,
 			bg = function(buffer)
-				return buffer.is_focused and colors.primary_color or get_hex("ColorColumn", "bg")
+				return buffer.is_focused and "#282c34" or "#21252b"
 			end,
 		},
 		components = {
@@ -42,7 +48,10 @@ startup_utils.with_safe_startup_page(function()
 				text = function(buffer)
 					return buffer.filename .. " "
 				end,
-				fg = colors.buffer_line_fg,
+				fg = function(buffer)
+					local color = buffer.is_focused and "#ffffff" or "#abb2bf"
+					return buffer.diagnostics.errors == 0 and color or "#e06c75"
+				end,
 				italic = function(buffer)
 					return buffer.is_modified
 				end,

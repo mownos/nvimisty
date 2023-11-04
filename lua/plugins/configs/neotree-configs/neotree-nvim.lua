@@ -6,7 +6,7 @@ require("neo-tree").setup({
 	close_if_last_window = true,
 	enable_git_status = true,
 	source_selector = {
-		separator = { right = "▕", left = nil },
+		separator = { right = "", left = "" },
 		separator_active = nil,
 		show_separator_on_edge = false,
 		winbar = true,
