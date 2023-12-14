@@ -15,7 +15,7 @@ startup_utils.with_safe_startup_page(function()
 			components = {
 				{
 					text = "",
-					bg = "#1d1f23",
+					bg = "#1c1f26",
 				},
 			},
 		},
@@ -50,7 +50,13 @@ startup_utils.with_safe_startup_page(function()
 				end,
 				fg = function(buffer)
 					local color = buffer.is_focused and "#ffffff" or "#abb2bf"
-					return buffer.diagnostics.errors == 0 and color or "#e06c75"
+					local modified_color = buffer.is_modified and "#dfc184" or color
+					local error_color = buffer.diagnostics.errors == 0 and modified_color or "#e06c75"
+
+					return error_color
+				end,
+				bold = function(buffer)
+					return buffer.is_focused
 				end,
 				italic = function(buffer)
 					return buffer.is_modified
@@ -64,7 +70,9 @@ startup_utils.with_safe_startup_page(function()
 					return buffer.is_modified and "" or ""
 				end,
 				fg = function(buffer)
-					return buffer.is_modified and colors.focused_yellow or colors.buffer_line_fg
+					local modified_color = buffer.is_modified and colors.focused_yellow or colors.buffer_line_fg
+
+					return modified_color
 				end,
 				on_click = function(_, _, _, _, buffer)
 					buffer:delete()

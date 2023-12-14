@@ -14,6 +14,6 @@ vim.api.nvim_create_autocmd({
 	pattern = "*",
 	callback = function()
 		os.execute("kitty @ set-spacing padding=0 margin=0")
-		os.execute("kitty @ set-font-size 16.0")
+		os.execute("kitty @ set-font-size 15.5")
 	end,
 })

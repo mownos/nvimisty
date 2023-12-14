@@ -30,3 +30,5 @@ end
 lspconfig.lua_ls.setup(language_configs.lua)
 lspconfig.tsserver.setup(language_configs.tsserver)
 lspconfig.clangd.setup({})
+lspconfig.hls.setup({})
+lspconfig.cmake.setup(language_configs.cmake)

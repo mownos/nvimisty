@@ -14,7 +14,7 @@ vim.opt.number = true -- show absolute number
 vim.opt.cursorline = true -- highlight cursor line underneath the cursor horizontally
 vim.opt.splitbelow = true -- open new vertical split bottom
 vim.opt.splitright = true -- open new horizontal splits right
--- vim.opt.termguicolors = true        -- enabl 24-bit RGB color in the TUI
+vim.opt.termguicolors = true -- enabl 24-bit RGB color in the TUI
 vim.opt.showmode = false -- we are experienced, wo don't need the "-- INSERT --" mode hint
 
 -- Searching
@@ -25,3 +25,33 @@ vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entere
 
 vim.opt.laststatus = 3
 vim.opt.signcolumn = "yes"
+
+-- vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor,a:blinkon100"
+-- vim.opt.fillchars = {
+-- 	vert = "│",
+-- 	fold = " ",
+-- 	eob = " ", -- suppress ~ at EndOfBuffer
+-- 	diff = "╱", -- alternatives = ⣿ ░ ─
+-- 	msgsep = "‾",
+-- 	foldopen = "▾",
+-- 	foldsep = "│",
+-- 	foldclose = "▸",
+-- }
+vim.opt.fillchars = {
+	horiz = "━",
+	horizup = "┻",
+	horizdown = "┳",
+	vert = "┃",
+	vertleft = "┫",
+	-- vertright = "┣",
+	vertright = "━",
+	verthoriz = "╋",
+}
+
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+-- 	pattern = "*",
+-- 	callback = function()
+-- 		vim.api.nvim_set_hl(0, "Cursor", { bg = "#dfc184" })
+-- 		vim.api.nvim_set_hl(0, "CursorReset", { fg = "white", bg = "white" })
+-- 	end,
+-- })

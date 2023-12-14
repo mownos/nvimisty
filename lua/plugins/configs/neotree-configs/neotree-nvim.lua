@@ -2,15 +2,16 @@ local special_icons = require("plugins.configs.neotree-configs.special-icons")
 local highlights = require("neo-tree.ui.highlights")
 
 require("neo-tree").setup({
+	retain_hidden_root_indent = true,
 	hide_root_node = true,
 	close_if_last_window = true,
 	enable_git_status = true,
-	source_selector = {
-		separator = { right = "", left = "" },
-		separator_active = nil,
-		show_separator_on_edge = false,
-		winbar = true,
-	},
+	-- source_selector = {
+	-- 	separator = { right = "", left = "" },
+	-- 	separator_active = nil,
+	-- 	show_separator_on_edge = false,
+	-- 	winbar = true,
+	-- },
 	default_component_configs = {
 		icon = {
 			folder_closed = "󰉋",
