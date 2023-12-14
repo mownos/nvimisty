@@ -2,6 +2,7 @@ local smart_splits = require("smart-splits")
 local resession = require("resession")
 local cokeline_buffers = require("cokeline.buffers")
 local edit_utils = require("utils.edit")
+local telescope_builtin = require("telescope.builtin")
 
 require("legendary").setup({
 	lazy_nvim = {
@@ -53,8 +54,31 @@ require("legendary").setup({
 		{ "<D-p>", ":Legendary<CR>", description = "Find commands using Legendary" },
 		{ "<D-o>", ":Telescope find_files<CR>", description = "Find files via filename suing Telescope" },
 		{
+			"th",
+			function()
+				telescope_builtin.search_history()
+			end,
+			description = "List search history",
+		},
+		{
+			"tb",
+			function()
+				telescope_builtin.buffers()
+			end,
+			description = "List all buffers",
+		},
+		{
+			"tr",
+			function()
+				telescope_builtin.resume()
+			end,
+			description = "Resume last telescope picker",
+		},
+		{
 			"<D-f>",
-			":Telescope live_grep<CR>",
+			function()
+				telescope_builtin.live_grep()
+			end,
 			description = "Global match according regex in whole project using Telescope",
 		},
 		{ "<C-h>", smart_splits.move_cursor_left, description = "Move cursor left" },

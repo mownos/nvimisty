@@ -5,6 +5,7 @@ require("plugins.lazy_install")
 vim.g.mapleader = " "
 
 require("lazy").setup({
+	"nvim-tree/nvim-web-devicons",
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = constants.MAX_PRIORITY,
@@ -50,10 +51,8 @@ require("lazy").setup({
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
 	},
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 	"kylechui/nvim-surround",
 	"mhartington/formatter.nvim",
 	"mrjones2014/smart-splits.nvim",
