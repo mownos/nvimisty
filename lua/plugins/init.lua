@@ -70,6 +70,7 @@ require("lazy").setup({
 	"windwp/windline.nvim",
 	"yamatsum/nvim-cursorline",
 	"NeogitOrg/neogit",
+	"kazhala/close-buffers.nvim",
 })
 
 -- setup treesitter
