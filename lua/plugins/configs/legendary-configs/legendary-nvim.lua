@@ -3,6 +3,7 @@ local resession = require("resession")
 local cokeline_buffers = require("cokeline.buffers")
 local edit_utils = require("utils.edit")
 local telescope_builtin = require("telescope.builtin")
+local close_buffers = require("close_buffers")
 
 require("legendary").setup({
 	lazy_nvim = {
@@ -110,7 +111,22 @@ require("legendary").setup({
 		{ "<A-l>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next tab" },
 		{ "<A-b>", { n = "<Plug>(cokeline-focus-prev)" }, description = "Switch to the previous buffer" },
 		{ "<A-f>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next buffer" },
-		{ "<A-b>", { n = "<C-o>" }, description = "Switch back buffer" },
+		{ "<A-b>", { n = "<C-o>" }, description = "Back to previous location" },
+		{ "<A-n>", { n = "<C-i>" }, description = "Back to next location" },
+		{
+			"<A-o>",
+			function()
+				close_buffers.wipe({ type = "other" })
+			end,
+			description = "Close other buffers",
+		},
+		{
+			"<A-a>",
+			function()
+				close_buffers.wipe({ type = "all" })
+			end,
+			description = "Close all buffers",
+		},
 		{
 			"<A-c>",
 			{
