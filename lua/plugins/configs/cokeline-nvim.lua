@@ -61,18 +61,17 @@ startup_utils.with_safe_startup_page(function()
 				italic = function(buffer)
 					return buffer.is_modified
 				end,
-				-- 	underline = function(buffer)
-				-- 		return buffer.is_hovered and not buffer.is_focused
-				-- 	end,
 			},
 			{
 				text = function(buffer)
-					return buffer.is_modified and "" or ""
+					local modify_icon = buffer.is_modified and "" or ""
+
+					return buffer.is_focused and "" or modify_icon
 				end,
 				fg = function(buffer)
 					local modified_color = buffer.is_modified and colors.focused_yellow or colors.buffer_line_fg
 
-					return modified_color
+					return buffer.is_focused and "#98C379" or modified_color
 				end,
 				on_click = function(_, _, _, _, buffer)
 					buffer:delete()
