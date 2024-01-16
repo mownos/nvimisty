@@ -64,14 +64,14 @@ startup_utils.with_safe_startup_page(function()
 			},
 			{
 				text = function(buffer)
-					local modify_icon = buffer.is_modified and "" or ""
+					local focused_icon = buffer.is_focused and "" or ""
 
-					return buffer.is_focused and "" or modify_icon
+					return buffer.is_modified and "" or focused_icon
 				end,
 				fg = function(buffer)
-					local modified_color = buffer.is_modified and colors.focused_yellow or colors.buffer_line_fg
+					local focused_color = buffer.is_focused and "#98C379" or colors.buffer_line_fg
 
-					return buffer.is_focused and "#98C379" or modified_color
+					return buffer.is_modified and colors.focused_yellow or focused_color
 				end,
 				on_click = function(_, _, _, _, buffer)
 					buffer:delete()
