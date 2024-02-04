@@ -6,8 +6,8 @@ return {
 		closed = "󱁿",
 	},
 	[".github"] = {
-		open = "󰝰",
-		closed = "",
+		open = "",
+		closed = "",
 		highlight = highlights.NeoTreeDerectoryIconGitHubDotFiles,
 	},
 	[".git"] = {

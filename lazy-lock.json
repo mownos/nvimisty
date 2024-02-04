@@ -16,6 +16,7 @@
   "friendly-snippets": { "branch": "main", "commit": "43727c2ff84240e55d4069ec3e6158d74cb534b6" },
   "fzf-lua": { "branch": "main", "commit": "cd3a9cb9ef55933be6152a77e8aeb36f12a0467b" },
   "git-blame.nvim": { "branch": "master", "commit": "1792125237260dc2a03ba57d31c39179e6049f07" },
+  "haskell-tools.nvim": { "branch": "master", "commit": "1b739495b2b3ed82d18d7de367cc2754f33d2c15" },
   "icon-picker.nvim": { "branch": "master", "commit": "8e89c06411584e02a928b3baaee056eab24466b3" },
   "indent-blankline.nvim": { "branch": "master", "commit": "29be0919b91fb59eca9e90690d76014233392bef" },
   "lazy.nvim": { "branch": "main", "commit": "16603c6917435d8446f7357cb61095138a417085" },

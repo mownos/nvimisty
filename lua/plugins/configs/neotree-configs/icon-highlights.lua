@@ -31,11 +31,11 @@ local icons_highlight_colors = {
 	},
 	{
 		highlight = highlights.NeoTreeDerectoryIconGitDotFiles,
-		color = "#e84d31",
+		color = "#61afef",
 	},
 	{
 		highlight = highlights.NeoTreeDerectoryIconGitHubDotFiles,
-		color = "#546e7a",
+		color = "#c8d6e5",
 	},
 	{
 		highlight = highlights.NeoTreeDerectoryIconSource,
