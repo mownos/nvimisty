@@ -23,6 +23,11 @@ require("lazy").setup({
 		cmd = "Copilot",
 		event = "InsertEnter",
 	},
+	{
+		"mrcjkb/haskell-tools.nvim",
+		version = "^3",
+		ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+	},
 	"numToStr/Comment.nvim",
 	"kevinhwang91/nvim-hlslens",
 	"nvim-telescope/telescope.nvim",
