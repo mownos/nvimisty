@@ -1,4 +1,7 @@
-require("plugins.configs.resession-nvim")
+require("plugins.configs.auto-session-nvim")
+require("plugins.configs.winshift-nvim")
+require("plugins.configs.lsp-signature-nvim")
+require("plugins.configs.lsp-attach-config")
 require("plugins.configs.web-devicons-nvim")
 require("plugins.configs.neoscroll-nvim")
 require("plugins.configs.lsp-config")

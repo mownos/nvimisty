@@ -1,15 +1,19 @@
 local smart_splits = require("smart-splits")
-local resession = require("resession")
 local cokeline_buffers = require("cokeline.buffers")
 local edit_utils = require("utils.edit")
 local telescope_builtin = require("telescope.builtin")
 local close_buffers = require("close_buffers")
+local copy_current_file_path = require("plugins.configs.legendary-configs.commands.copy-current-file-path")
 
 require("legendary").setup({
 	lazy_nvim = {
 		auto_register = true,
 	},
 	commands = {
+		{ ":Autosession delete", description = "Delete session via telescope" },
+		{ ":Autosession search", description = "Search session via telescope" },
+		{ ":SessionSave", description = "Save current session" },
+		{ ":SessionRestore", description = "Restore previous session" },
 		{ ":DiffviewFileHistory %", description = "View curent buffer git changes history" },
 		{ ":SwapBufferLeft", smart_splits.swap_buf_left, description = "Swap buffer to left" },
 		{ ":SwapBufferRight", smart_splits.swap_buf_right, description = "Swap buffer to right" },
@@ -18,13 +22,22 @@ require("legendary").setup({
 		{ ":vertical terminal", description = "New terminal vertically" },
 		{ ":horizontal terminal", description = "New terminal horizontally" },
 		{ ":terminal", description = "Open new terminal in new page" },
-		{ ":SaveCurrentSession", resession.save, description = "Save current session" },
-		{ ":LoadPrevSession", resession.load, description = "Load previous session" },
-		{ ":DeletePrevSession", resession.delete, description = "Delete previous session" },
 		{ ":Copilot auth signin", description = "Sign Copilot" },
 		{ ":Telescope notify", description = "View notify history" },
+		{
+			":CopyCurrentFilePath",
+			copy_current_file_path,
+			description = "Copy relative path of current file into clipboard",
+		},
 	},
 	keymaps = {
+		{ "<C-w>w", { n = ":WinShift<CR>" }, description = "Enter to win-mode" },
+		{ "<C-w>s", { n = ":WinShift swap<CR>" }, description = "Enter to swap win-mode" },
+		{
+			"<C-w>r",
+			smart_splits.start_resize_mode,
+			description = "Resize split window by tight",
+		},
 		{ "<A-,>", "<Plug>(cokeline-switch-prev)", description = "Switch prev buffer" },
 		{ "<A-.>", "<Plug>(cokeline-switch-next)", description = "Switch next buffer" },
 		{
@@ -49,8 +62,8 @@ require("legendary").setup({
 		{ "dq", { n = ":DiffviewClose<CR>" }, description = "Close diffview" },
 		{ "q", { n = ":nohlsearch<CR>" }, description = "Exit hlsearch mode" },
 		{ "<A-b>", { n = "<C-w>p" }, description = "Move back" },
-		{ "<C-,>", { n = "<C-w>200h" }, "Move to leftmost window" },
-		{ "<C-.>", { n = "<C-w>200l" }, "Move to rightmost window" },
+		{ "<S-h>", { n = "<C-w>200h" }, "Move to leftmost window" },
+		{ "<S-l>", { n = "<C-w>200l" }, "Move to rightmost window" },
 		{ "<Leader><Leader>i", ":IconPickerNormal<CR>", description = "Pick icons" },
 		{ "<D-p>", ":Legendary<CR>", description = "Find commands using Legendary" },
 		{ "<D-o>", ":Telescope find_files<CR>", description = "Find files via filename suing Telescope" },
@@ -86,10 +99,6 @@ require("legendary").setup({
 		{ "<C-l>", smart_splits.move_cursor_right, description = "Move cursor right" },
 		{ "<C-j>", smart_splits.move_cursor_down, description = "Move cursor down" },
 		{ "<C-k>", smart_splits.move_cursor_up, description = "Move cursor up" },
-		{ "<C-Up>", smart_splits.resize_up, description = "Resize split window by top" },
-		{ "<C-Down>", smart_splits.resize_down, description = "Resize split window by down" },
-		{ "<C-Left>", smart_splits.resize_left, description = "Resize split window by left" },
-		{ "<C-Right>", smart_splits.resize_right, description = "Resize split window by tight" },
 		{ "<C-\\>", {
 			t = "<C-\\><C-n>",
 		}, description = "Exit terminal mode" },
