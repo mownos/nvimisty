@@ -10,7 +10,7 @@ return {
 		bufmap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
 
 		-- Jump to the definition
-		bufmap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
+		bufmap("n", "gd", "<cmd>Telescope lsp_definitions<cr>")
 
 		-- Jump to declaration
 		bufmap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
@@ -22,7 +22,7 @@ return {
 		bufmap("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
 
 		-- Lists all the references
-		bufmap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
+		bufmap("n", "gr", "<cmd>Telescope lsp_references<cr>")
 
 		-- Displays a function's signature information
 		bufmap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>")

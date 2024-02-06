@@ -5,6 +5,9 @@ require("plugins.lazy_install")
 vim.g.mapleader = " "
 
 require("lazy").setup({
+	"rmagatti/auto-session",
+	"sindrets/winshift.nvim",
+	"stevearc/dressing.nvim",
 	"nvim-tree/nvim-web-devicons",
 	{
 		"olimorris/onedarkpro.nvim",
@@ -52,7 +55,6 @@ require("lazy").setup({
 	"williamboman/mason-lspconfig.nvim",
 	"nvim-lua/plenary.nvim",
 	"willothy/nvim-cokeline",
-	"stevearc/resession.nvim",
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -66,9 +68,10 @@ require("lazy").setup({
 		version = "v2.1.0",
 		priority = constants.MAX_PRIORITY,
 		lazy = false,
-		dependencies = {
-			"stevearc/dressing.nvim",
-		},
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
 	},
 	"nvim-telescope/telescope-fzf-native.nvim",
 	"Bekaboo/dropbar.nvim",
