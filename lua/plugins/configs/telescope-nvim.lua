@@ -1,6 +1,5 @@
 local actions = require("telescope.actions")
 local telescope = require("telescope")
-local mime_utils = require("utils.mime")
 
 telescope.setup({
 	defaults = {
@@ -31,7 +30,14 @@ telescope.setup({
 		},
 		preview = {
 			mime_hook = function(filepath, bufnr, opts)
-				if mime_utils.is_image(filepath) then
+				local is_image = function()
+					local image_extensions = { "png", "jpg", "jpeg", "gif" } -- Supported image formats
+					local split_path = vim.split(filepath:lower(), ".", { plain = true })
+					local extension = split_path[#split_path]
+					return vim.tbl_contains(image_extensions, extension)
+				end
+
+				if is_image() then
 					local term = vim.api.nvim_open_term(bufnr, {})
 					local function send_output(_, data, _)
 						for _, d in ipairs(data) do
@@ -39,9 +45,13 @@ telescope.setup({
 						end
 					end
 					vim.fn.jobstart({
-						"catimg",
-						filepath, -- Terminal image viewer command
-					}, { on_stdout = send_output, stdout_buffered = true, pty = true })
+						"viu",
+						filepath,
+					}, {
+						on_stdout = send_output,
+						stdout_buffered = true,
+						pty = true,
+					})
 				else
 					require("telescope.previewers.utils").set_preview_message(
 						bufnr,
