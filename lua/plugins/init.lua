@@ -1,5 +1,5 @@
-local constants = require("utils.constants")
 local options = require("plugins.lazy-options")
+local lazy_constants = require("constants.lazy")
 
 require("plugins.lazy-install")
 
@@ -14,7 +14,7 @@ require("lazy").setup({
 	"nvim-tree/nvim-web-devicons",
 	{
 		"olimorris/onedarkpro.nvim",
-		priority = constants.MAX_PRIORITY,
+		priority = lazy_constants.MAX_PRIORITY,
 	},
 	{
 		"willothy/veil.nvim",
@@ -69,7 +69,7 @@ require("lazy").setup({
 	{
 		"mrjones2014/legendary.nvim",
 		version = "v2.1.0",
-		priority = constants.MAX_PRIORITY,
+		priority = lazy_constants.MAX_PRIORITY,
 		lazy = false,
 	},
 	{

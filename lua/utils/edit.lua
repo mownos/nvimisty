@@ -1,4 +1,5 @@
 local string_utils = require("utils.string")
+local AUTO_PAIR_SYMBOLS = require("constants.auto-pair")
 local edit_utils = {}
 
 local function find_last_string_pos_by_pattern(target_str, pattern)
@@ -61,18 +62,10 @@ function edit_utils.move_cursor_to_nearest_symbol()
 end
 
 function edit_utils.escape_in_symbol()
-	local matched_symbols = {
-		{ '"', '"' },
-		{ "'", "'" },
-		{ "{", "}" },
-		{ "[", "]" },
-		{ "(", ")" },
-		{ "<", ">" },
-	}
 	local cursor_pos = vim.api.nvim_win_get_cursor(0)
 	local current_line_content = vim.api.nvim_get_current_line()
 
-	for _, symbol in ipairs(matched_symbols) do
+	for _, symbol in ipairs(AUTO_PAIR_SYMBOLS) do
 		if
 			string_utils.char_at(current_line_content, cursor_pos[2]) == symbol[2]
 			and string_utils.char_at(current_line_content, cursor_pos[2] - 1) == symbol[1]
