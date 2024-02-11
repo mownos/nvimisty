@@ -36,7 +36,7 @@ startup_utils.with_safe_startup_page(function()
 					return " " .. buffer.devicon.icon
 				end,
 				fg = function(buffer)
-					return buffer.devicon.color
+					return buffer.is_focused and buffer.devicon.color or "#ABB2BF"
 				end,
 			},
 			{

@@ -8,4 +8,8 @@ function string_utils.escape(str)
 	return str:gsub("[%(%)%.%%%+%-%*%?%[%^%$%]]", "%%%1")
 end
 
+function string_utils.trim(str)
+	return str:gsub("%s+", "")
+end
+
 return string_utils
