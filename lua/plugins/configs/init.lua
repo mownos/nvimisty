@@ -1,3 +1,5 @@
+require("plugins.configs.lightbulb-nvim")
+require("plugins.configs.code-link-nvim")
 require("plugins.configs.auto-session-nvim")
 require("plugins.configs.winshift-nvim")
 require("plugins.configs.lsp-signature-nvim")

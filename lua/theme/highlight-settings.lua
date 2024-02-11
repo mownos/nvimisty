@@ -13,7 +13,7 @@ vim.api.nvim_set_hl(0, "NeotreeNormalNC", { bg = "#1c1f26" })
 vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#5777c6" })
 
 -- SmoothCursor
-vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#e5c07b" })
+vim.api.nvim_set_hl(0, "SmoothCursor", { fg = "#C678DD" })
 
 -- Cmp
 vim.api.nvim_set_hl(0, "CmpNormal", { bg = theme.inactive })
@@ -67,3 +67,6 @@ vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { bg = base_color, fg = base_co
 
 -- Edit
 vim.api.nvim_set_hl(0, "MatchParen", { bg = "#6a6c71", fg = "#e5c07b", bold = true })
+
+-- Hint
+vim.api.nvim_set_hl(0, "LightBulbVirtualText", { fg = "#f5cd79", bold = true })

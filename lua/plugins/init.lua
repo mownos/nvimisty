@@ -1,10 +1,13 @@
 local constants = require("utils.constants")
+local options = require("plugins.lazy-options")
 
-require("plugins.lazy_install")
+require("plugins.lazy-install")
 
 vim.g.mapleader = " "
 
 require("lazy").setup({
+	"kosayoda/nvim-lightbulb",
+	"mistricky/code-link.nvim",
 	"rmagatti/auto-session",
 	"sindrets/winshift.nvim",
 	"stevearc/dressing.nvim",
@@ -79,7 +82,7 @@ require("lazy").setup({
 	"yamatsum/nvim-cursorline",
 	"NeogitOrg/neogit",
 	"kazhala/close-buffers.nvim",
-})
+}, options)
 
 -- setup treesitter
 local ok, treesitter = pcall(require, "nvim-treesitter.configs")

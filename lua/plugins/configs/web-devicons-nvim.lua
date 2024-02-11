@@ -15,6 +15,10 @@ require("nvim-web-devicons").setup({
 			color = "#feca57",
 			name = "JSON",
 		},
+		toml = {
+			icon = "",
+			name = "TOML",
+		},
 	},
 	override_by_filename = {
 		[".drone.yml"] = {

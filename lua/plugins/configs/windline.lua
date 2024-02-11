@@ -1,9 +1,11 @@
 local startup_utils = require("utils.startup")
 local windline = require("windline")
 local state = _G.WindLine.state
-local lsp_comps = require("windline.components.lsp")
+local lsp_components = require("windline.components.lsp")
+local git_components = require("windline.components.git")
 local basic_components = require("windline.components.basic")
 local diagnostics_utils = require("utils.diagnostics")
+local git_utils = require("utils.git")
 
 local MIN_WIDTH = 100
 local NORMAL_HIGHLIGHT = { "white", "PrimaryColor" }
@@ -14,14 +16,15 @@ local lsp_diagnos = {
 		red = { "red", "PrimaryColor" },
 		yellow = { "yellow", "PrimaryColor" },
 		white = { "white", "PrimaryColor" },
+		blue = { "blue", "PrimaryColor" },
 	},
 	text = function(bufnr)
-		lsp_comps.check_lsp(bufnr)
+		lsp_components.check_lsp(bufnr)
 
 		return {
-			{ lsp_comps.lsp_error({ format = "  %s", show_zero = true }), "red" },
-			{ lsp_comps.lsp_warning({ format = "  %s", show_zero = true }), "yellow" },
-			{ lsp_comps.lsp_hint({ format = " 󰌵 %s", show_zero = true }), "white" },
+			{ lsp_components.lsp_error({ format = "  %s", show_zero = true }), "red" },
+			{ lsp_components.lsp_warning({ format = "  %s", show_zero = true }), "yellow" },
+			{ lsp_components.lsp_hint({ format = " 󰌵 %s", show_zero = true }), "blue" },
 		}
 	end,
 }
@@ -100,6 +103,8 @@ local progress_battery = {
 	end,
 }
 
+print(git_utils.git_branch())
+
 local default = {
 	filetypes = { "default" },
 	colors_name = function(colors)
@@ -107,23 +112,32 @@ local default = {
 		colors.PureWhite = "#ffffff"
 		colors.pink = "#f368e0"
 		colors.white = "#b7bcc7"
+		colors.blue = "#61AEEF"
 		colors.BatteryGreen = "#72ce6e"
 
 		return colors
 	end,
 	active = {
 		space,
-		{ "", { "PureWhite", "PrimaryColor" } },
+		{
+			"",
+			{ "PureWhite", "PrimaryColor" },
+		},
 		space,
 		space,
 		vi_mode,
 		space,
 		lsp_diagnos,
 		{ basic_components.divider, "" },
-		{ "Spaces:" .. tostring(vim.o.tabstop), NORMAL_HIGHLIGHT },
+		-- { "Spaces:" .. tostring(vim.o.tabstop), NORMAL_HIGHLIGHT },
+		{ git_components.git_branch({}), NORMAL_HIGHLIGHT },
+		{ git_utils.git_branch(), NORMAL_HIGHLIGHT },
 		space,
 		space,
-		{ basic_components.file_type({ icon = true }), NORMAL_HIGHLIGHT },
+		{
+			basic_components.file_type({ icon = true }),
+			NORMAL_HIGHLIGHT,
+		},
 		space,
 		space,
 		{ basic_components.file_encoding(), NORMAL_HIGHLIGHT },
