@@ -30,6 +30,8 @@ end
 lspconfig.lua_ls.setup(language_configs.lua)
 lspconfig.tsserver.setup(language_configs.tsserver)
 lspconfig.clangd.setup({})
--- HLS has been configed by haskell-tools plugin
+-- HLS has been configured by haskell-tools plugin
 -- lspconfig.hls.setup({})
 lspconfig.cmake.setup(language_configs.cmake)
+lspconfig.rust_analyzer.setup(language_configs.rust)
+lspconfig.typos_lsp.setup(language_configs.typos)

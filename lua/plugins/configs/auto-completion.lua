@@ -43,19 +43,16 @@ cmp.setup({
 		end,
 	},
 	sources = {
-		{ name = "copilot", group_index = 2 },
-		-- Other Sources
 		{ name = "nvim_lsp", group_index = 2 },
+		{ name = "copilot", group_index = 2 },
 		{ name = "path", group_index = 2 },
+		{ name = "buffer", keyword_length = 2 },
 		{ name = "luasnip", group_index = 2 },
-		-- 	{ name = "path" },
-		-- 	{ name = "nvim_lsp", keyword_length = 1 },
-		-- 	{ name = "copilot", keyword_length = 2, group_index = 1 },
-		-- 	{ name = "luasnip", keyword_length = 3 },
-		-- 	{ name = "buffer", keyword_length = 4 },
 	},
 	window = {
-		documentation = cmp.config.window.bordered(),
+		documentation = {
+			border = nil,
+		},
 		completion = {
 			winhighlight = "Normal:CmpNormal,CursorLine:CmpCursorLine",
 		},
