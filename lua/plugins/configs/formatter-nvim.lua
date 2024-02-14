@@ -21,6 +21,9 @@ require("formatter").setup(formatter_util.merge_filetypes({
 	log_level = vim.log.levels.WARN,
 
 	filetype = {
+		rust = {
+			require("formatter.filetypes.rust").rustfmt,
+		},
 		lua = {
 			require("formatter.filetypes.lua").stylua,
 		},

@@ -13,6 +13,6 @@ return function(char)
 	end
 
 	vim.schedule(function()
-		vim.api.nvim_put({ pair[2] }, "", true, true)
+		vim.api.nvim_put({ pair[2] }, "", false, true)
 	end)
 end
