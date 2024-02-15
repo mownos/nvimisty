@@ -49,6 +49,7 @@
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "6c921ca12321edaa773e324ef64ea301a1d0da62" },
   "telescope.nvim": { "branch": "master", "commit": "0f865f17af4f9bc1587a0132414cdfd32d91852e" },
   "veil.nvim": { "branch": "main", "commit": "88d5fd48e178a9996985e534cdeded0b2a421881" },
+  "vim-rescript": { "branch": "master", "commit": "2065f4e1d319ffd4ff7046879f270ebbadda873e" },
   "windline.nvim": { "branch": "master", "commit": "54401a62c61d56fe9df106321b158c9048aa5f9b" },
   "winshift.nvim": { "branch": "main", "commit": "37468ed6f385dfb50402368669766504c0e15583" }
 }
