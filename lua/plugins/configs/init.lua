@@ -1,3 +1,4 @@
+require("plugins.configs.codesnap-nvim")
 require("plugins.configs.lightbulb-nvim")
 require("plugins.configs.code-link-nvim")
 require("plugins.configs.auto-session-nvim")

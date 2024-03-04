@@ -6,4 +6,7 @@ require("mason").setup({
 			package_uninstalled = " 󰚌",
 		},
 	},
+	registries = {
+		"github:mason-org/mason-registry",
+	},
 })

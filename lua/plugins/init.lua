@@ -6,6 +6,7 @@ require("plugins.lazy-install")
 vim.g.mapleader = " "
 
 require("lazy").setup({
+	{ "mistricky/codesnap.nvim", build = "make" },
 	{ "rescript-lang/vim-rescript", ft = "rescript" },
 	"kosayoda/nvim-lightbulb",
 	"mistricky/code-link.nvim",
