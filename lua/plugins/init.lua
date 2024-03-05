@@ -8,6 +8,7 @@ vim.g.mapleader = " "
 require("lazy").setup({
 	{ "mistricky/codesnap.nvim", build = "make" },
 	{ "rescript-lang/vim-rescript", ft = "rescript" },
+	"ggandor/leap.nvim",
 	"kosayoda/nvim-lightbulb",
 	"mistricky/code-link.nvim",
 	"rmagatti/auto-session",
