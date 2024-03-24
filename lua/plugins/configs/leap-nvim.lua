@@ -2,4 +2,4 @@ local leap = require("leap")
 
 leap.create_default_mappings()
 
-leap.opt.safe_labels = "sfnut/SFNLHMUGTZoO?"
+leap.opts.safe_labels = "ipoOsfnut/SFNLHMUGTZ?"

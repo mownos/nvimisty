@@ -107,7 +107,7 @@ require("legendary").setup({
 			{ v = '"_dp' },
 		},
 		{
-			"s",
+			"d",
 			{ v = '"_di' },
 			description = "Delete content avoid put in clipboard",
 		},
