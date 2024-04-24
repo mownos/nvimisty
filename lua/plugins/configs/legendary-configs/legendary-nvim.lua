@@ -31,6 +31,8 @@ require("legendary").setup({
 		},
 	},
 	keymaps = {
+		{ "<C-t>c", { x = ":CodeSnap<CR>" }, description = "Take code snapshot and copt it into clipboard" },
+		{ "<C-t>s", { x = ":CodeSnap<CR>" }, description = "Take code snapshot and save it on /Pictures" },
 		{ "<C-w>w", { n = ":WinShift<CR>" }, description = "Enter to win-mode" },
 		{ "<C-w>s", { n = ":WinShift swap<CR>" }, description = "Enter to swap win-mode" },
 		{
