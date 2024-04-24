@@ -91,7 +91,14 @@ require("legendary").setup({
 			description = "Resume last telescope picker",
 		},
 		{
-			"<D-f>",
+			"<D-f>f",
+			function()
+				telescope_builtin.grep_string()
+			end,
+			description = "Global match in whole project using Telescope",
+		},
+		{
+			"<D-f>r",
 			function()
 				telescope_builtin.live_grep()
 			end,

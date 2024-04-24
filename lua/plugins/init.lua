@@ -6,6 +6,7 @@ require("plugins.lazy-install")
 vim.g.mapleader = " "
 
 require("lazy").setup({
+	{ "windwp/nvim-autopairs", event = "InsertEnter" },
 	{ "mistricky/codesnap.nvim", build = "make" },
 	{ "rescript-lang/vim-rescript", ft = "rescript" },
 	"ggandor/leap.nvim",
