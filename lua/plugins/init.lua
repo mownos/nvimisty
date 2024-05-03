@@ -7,7 +7,11 @@ vim.g.mapleader = " "
 
 require("lazy").setup({
 	{ "windwp/nvim-autopairs", event = "InsertEnter" },
-	{ "mistricky/codesnap.nvim", build = "make" },
+	-- { "mistricky/codesnap.nvim", build = "make" },
+	-- { "kevinhwang91/nvim-ufo", dependencies = {
+	-- 	"kevinhwang91/promise-async",
+	-- } },
+	{ dir = "~/repositories/codesnap.nvim" },
 	{ "rescript-lang/vim-rescript", ft = "rescript" },
 	"ggandor/leap.nvim",
 	"kosayoda/nvim-lightbulb",

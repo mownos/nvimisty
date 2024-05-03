@@ -4,6 +4,7 @@ local edit_utils = require("utils.edit")
 local telescope_builtin = require("telescope.builtin")
 local close_buffers = require("close_buffers")
 local copy_current_file_path = require("plugins.configs.legendary-configs.commands.copy-current-file-path")
+-- local ufo = require("ufo")
 
 require("legendary").setup({
 	lazy_nvim = {
@@ -31,6 +32,8 @@ require("legendary").setup({
 		},
 	},
 	keymaps = {
+		-- { "zr", { n = ufo.openAllFolds }, description = "Open fold" },
+		-- { "zm", { n = ufo.closeAllFolds }, description = "Close fold" },
 		{ "<C-t>c", { x = ":CodeSnap<CR>" }, description = "Take code snapshot and copt it into clipboard" },
 		{ "<C-t>s", { x = ":CodeSnap<CR>" }, description = "Take code snapshot and save it on /Pictures" },
 		{ "<C-w>w", { n = ":WinShift<CR>" }, description = "Enter to win-mode" },

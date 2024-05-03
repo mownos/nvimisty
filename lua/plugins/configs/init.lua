@@ -1,3 +1,4 @@
+-- require("plugins.configs.ufo-nvim")
 require("plugins.configs.autopairs-nvim")
 require("plugins.configs.codesnap-nvim")
 require("plugins.configs.lightbulb-nvim")
