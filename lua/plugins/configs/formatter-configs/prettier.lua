@@ -1,3 +1,4 @@
+local formatter_package_utils = require("formatter.util")
 local create_prettier_configs = {}
 
 function create_prettier_configs.apply(languages)
@@ -8,11 +9,12 @@ function create_prettier_configs.apply(languages)
 			function()
 				return {
 					exe = "prettierd",
-					args = { vim.api.nvim_buf_get_name(0) },
+					args = {
+						formatter_package_utils.escape_path(formatter_package_utils.get_current_buffer_file_path()),
+					},
 					stdin = true,
 				}
 			end,
-			-- require("formatter.filetypes." .. language).prettier,
 		}
 	end
 

@@ -1,6 +1,5 @@
 local create_prettier_configs = require("plugins.configs.formatter-configs.prettier")
 local formatter_util = require("utils.formatter")
-local formatter_package_utils = require("formatter.util")
 
 local prettier_configs =
 	create_prettier_configs.apply({ "typescript", "typescriptreact", "javascript", "javascriptreact", "json" })
