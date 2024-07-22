@@ -103,8 +103,6 @@ local progress_battery = {
 	end,
 }
 
-print(git_utils.git_branch())
-
 local default = {
 	filetypes = { "default" },
 	colors_name = function(colors)

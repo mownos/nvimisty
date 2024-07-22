@@ -20,6 +20,9 @@ require("formatter").setup(formatter_util.merge_filetypes({
 	log_level = vim.log.levels.WARN,
 
 	filetype = {
+		go = {
+			require("formatter.filetypes.go").gofmt,
+		},
 		rust = {
 			require("formatter.filetypes.rust").rustfmt,
 		},

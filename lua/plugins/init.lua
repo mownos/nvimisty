@@ -8,6 +8,10 @@ vim.g.mapleader = " "
 require("lazy").setup({
 	{ "windwp/nvim-autopairs", event = "InsertEnter" },
 	{ "mistricky/codesnap.nvim", build = "make" },
+	{
+		"Aasim-A/scrollEOF.nvim",
+		event = { "CursorMoved", "WinScrolled" },
+	},
 	-- { "kevinhwang91/nvim-ufo", dependencies = {
 	-- 	"kevinhwang91/promise-async",
 	-- } },
