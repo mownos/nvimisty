@@ -1,8 +1,10 @@
 local create_prettier_configs = require("plugins.configs.formatter-configs.prettier")
 local formatter_util = require("utils.formatter")
 
+-- The prettier can format many languages like TypeScript, JavaScript, JSON, CSS, etc. you can
+-- config which language you want to auto format in the following table
 local prettier_configs =
-	create_prettier_configs.apply({ "typescript", "typescriptreact", "javascript", "javascriptreact", "json" })
+	create_prettier_configs.apply({ "typescript", "typescriptreact", "javascript", "javascriptreact", "json", "css" })
 
 local language_configs = {
 	prettier_configs,

@@ -15,7 +15,9 @@ lsp_default_config.capabilities =
 	vim.tbl_deep_extend("force", lsp_default_config.capabilities, cmp_nvim_lsp.default_capabilities())
 
 -- Enable language servers
-require("mason").setup()
+require("mason").setup({
+	PATH = "append",
+})
 require("mason-lspconfig").setup({
 	automatic_installation = true,
 })
@@ -28,6 +30,7 @@ if language_configs == nil then
 end
 
 lspconfig.lua_ls.setup(language_configs.lua)
+-- lspconfig.denols.setup(language_configs.deno)
 lspconfig.tsserver.setup(language_configs.tsserver)
 lspconfig.clangd.setup({})
 -- HLS has been configured by haskell-tools plugin
@@ -39,6 +42,6 @@ lspconfig.eslint.setup({})
 lspconfig.typos_lsp.setup(language_configs.typos)
 lspconfig.dockerls.setup({})
 lspconfig.docker_compose_language_service.setup({})
-lspconfig.denols.setup(language_configs.deno)
 lspconfig.taplo.setup({})
 lspconfig.gopls.setup({})
+lspconfig.mdx_analyzer.setup({})

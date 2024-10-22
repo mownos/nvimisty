@@ -1,5 +1,6 @@
 local special_icons = require("plugins.configs.neotree-configs.special-icons")
 local highlights = require("neo-tree.ui.highlights")
+local mini_icons = require("mini.icons")
 
 require("neo-tree").setup({
 	retain_hidden_root_indent = true,
@@ -55,11 +56,12 @@ require("neo-tree").setup({
 				local highlight = config.highlight or highlights.FILE_ICON
 
 				if node.type == "directory" then
+					local mini_directory_icon, hl = mini_icons.get("directory", node.name)
 					local parsed_special_icons = special_icons[node.name]
 						or {
-							open = config.folder_open or "-",
-							closed = config.folder_closed or "+",
-							highlight = highlights.DIRECTORY_ICON,
+							open = mini_directory_icon or config.folder_open or "-",
+							closed = mini_directory_icon or config.folder_closed or "+",
+							highlight = hl,
 						}
 
 					highlight = parsed_special_icons.highlight or highlights.DIRECTORY_ICON
@@ -70,12 +72,12 @@ require("neo-tree").setup({
 						icon = parsed_special_icons.closed
 					end
 				elseif node.type == "file" then
-					local success, web_devicons = pcall(require, "nvim-web-devicons")
-					if success then
-						local devicon, hl = web_devicons.get_icon(node.name, node.ext)
-						icon = devicon or icon
-						highlight = hl or highlight
-					end
+					-- Use mini.icons for render file icons
+					-- local success, mini_icons = pcall(require, "mini.icons")
+					local devicon, hl = mini_icons.get("file", node.name)
+
+					icon = devicon or icon
+					highlight = hl or highlight
 				end
 
 				return {

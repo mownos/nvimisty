@@ -7,23 +7,29 @@ vim.g.mapleader = " "
 
 require("lazy").setup({
 	{ "windwp/nvim-autopairs", event = "InsertEnter" },
-	{ "mistricky/codesnap.nvim", build = "make" },
+	-- { "mistricky/codesnap.nvim", build = "make build_generator" },
 	{
 		"Aasim-A/scrollEOF.nvim",
 		event = { "CursorMoved", "WinScrolled" },
 	},
+	{ "echasnovski/mini.icons", version = false },
 	-- { "kevinhwang91/nvim-ufo", dependencies = {
 	-- 	"kevinhwang91/promise-async",
 	-- } },
-	-- { dir = "~/repositories/codesnap.nvim" },
+	{ dir = "~/repositories/codesnap.nvim" },
 	{ "rescript-lang/vim-rescript", ft = "rescript" },
+	-- {
+	-- 	"yetone/avante.nvim",
+	-- 	event = "VeryLazy",
+	-- 	build = "make",
+	-- },
 	"ggandor/leap.nvim",
 	"kosayoda/nvim-lightbulb",
 	"mistricky/code-link.nvim",
 	"rmagatti/auto-session",
 	"sindrets/winshift.nvim",
 	"stevearc/dressing.nvim",
-	"nvim-tree/nvim-web-devicons",
+	-- "nvim-tree/nvim-web-devicons",
 	{
 		"olimorris/onedarkpro.nvim",
 		priority = lazy_constants.MAX_PRIORITY,
@@ -36,11 +42,12 @@ require("lazy").setup({
 	"karb94/neoscroll.nvim",
 	"ibhagwan/fzf-lua",
 	"petertriho/nvim-scrollbar",
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-	},
+	"github/copilot.vim",
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	cmd = "Copilot",
+	-- 	event = "InsertEnter",
+	-- },
 	{
 		"mrcjkb/haskell-tools.nvim",
 		version = "^3",
@@ -54,8 +61,9 @@ require("lazy").setup({
 	"windwp/nvim-ts-autotag",
 	"rcarriga/nvim-notify",
 	"MunifTanjim/nui.nvim",
+	"grapp-dev/nui-components.nvim",
 	"ziontee113/icon-picker.nvim",
-	"zbirenbaum/copilot-cmp",
+	-- "zbirenbaum/copilot-cmp",
 	"neovim/nvim-lspconfig",
 	"f-person/git-blame.nvim",
 	"hrsh7th/cmp-nvim-lsp",

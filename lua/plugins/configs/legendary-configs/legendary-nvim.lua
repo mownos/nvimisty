@@ -30,6 +30,8 @@ require("legendary").setup({
 			copy_current_file_path,
 			description = "Copy relative path of current file into clipboard",
 		},
+		{ ":PetsNew Misty", description = "Create pets named Misty" },
+		{ ":PetsHideToggle", description = "Toggle pets" },
 	},
 	keymaps = {
 		-- { "zr", { n = ufo.openAllFolds }, description = "Open fold" },
@@ -72,6 +74,7 @@ require("legendary").setup({
 		{ "<Leader><Leader>i", ":IconPickerNormal<CR>", description = "Pick icons" },
 		{ "<D-p>", ":Legendary<CR>", description = "Find commands using Legendary" },
 		{ "<D-o>", ":Telescope find_files<CR>", description = "Find files via filename suing Telescope" },
+		{ "<D-v>", '<C-R>"', description = "Paste content from clipboard" },
 		{
 			"th",
 			function()

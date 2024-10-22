@@ -1,7 +1,7 @@
-local util = require("lspconfig.util")
+local lspconfig = require("lspconfig")
 
 return {
 	deno = {
-		root_dir = util.root_pattern("deno.json", "deno.jsonc"),
+		root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 	},
 }

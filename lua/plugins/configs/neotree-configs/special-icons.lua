@@ -8,27 +8,27 @@ return {
 	[".github"] = {
 		open = "",
 		closed = "",
-		highlight = highlights.NeoTreeDerectoryIconGitHubDotFiles,
+		highlight = highlights.NeoTreeDirectoryIconGitHubDotFiles,
 	},
 	[".git"] = {
 		open = "󰝰",
 		closed = "",
-		highlight = highlights.NeoTreeDerectoryIconGitDotFiles,
+		highlight = highlights.NeoTreeDirectoryIconGitDotFiles,
 	},
 	src = {
 		open = "󰝰",
 		closed = "󱂵",
-		highlight = highlights.NeoTreeDerectoryIconSource,
+		highlight = highlights.NeoTreeDirectoryIconSource,
 	},
 	scripts = {
 		open = "󰝰",
 		closed = "󰴉",
-		highlight = highlights.NeoTreeDerectoryIconScripts,
+		highlight = highlights.NeoTreeDirectoryIconScripts,
 	},
 	[".vscode"] = {
 		open = "󰝰",
 		closed = "󱁿",
-		highlight = highlights.NeoTreeDerectoryIconVSCode,
+		highlight = highlights.NeoTreeDirectoryIconVSCode,
 	},
 	[".idea"] = {
 		open = "󰝰",
@@ -37,41 +37,41 @@ return {
 	patches = {
 		open = "󰝰",
 		closed = "",
-		highlight = highlights.NeoTreeDerectoryIconPatches,
+		highlight = highlights.NeoTreeDirectoryIconPatches,
 	},
 	specs = {
 		open = "󰝰",
 		closed = "󱃪",
-		highlight = highlights.NeoTreeDerectoryIconSpec,
+		highlight = highlights.NeoTreeDirectoryIconSpec,
 	},
 	spec = {
 		open = "󰝰",
 		closed = "󱃪",
-		highlight = highlights.NeoTreeDerectoryIconSpec,
+		highlight = highlights.NeoTreeDirectoryIconSpec,
 	},
 	tests = {
 		open = "󰝰",
 		closed = "󱃪",
-		highlight = highlights.NeoTreeDerectoryIconSpec,
+		highlight = highlights.NeoTreeDirectoryIconSpec,
 	},
 	test = {
 		open = "󰝰",
 		closed = "󱃪",
-		highlight = highlights.NeoTreeDerectoryIconSpec,
+		highlight = highlights.NeoTreeDirectoryIconSpec,
 	},
 	node_modules = {
 		open = "󰝰",
 		closed = "󱋣",
-		highlight = highlights.NeoTreeDerectoryIconNodeModules,
+		highlight = highlights.NeoTreeDirectoryIconNodeModules,
 	},
 	android = {
 		open = "",
 		closed = "",
-		highlight = highlights.NeoTreeDerectoryIconAndroid,
+		highlight = highlights.NeoTreeDirectoryIconAndroid,
 	},
 	ios = {
 		open = "",
 		closed = "",
-		highlight = highlights.NeoTreeDerectoryIconiOS,
+		highlight = highlights.NeoTreeDirectoryIconiOS,
 	},
 }
