@@ -1,7 +1,7 @@
 local util = require("lspconfig.util")
 
 return {
-	tsserver = {
+	ts_ls = {
 		on_init = function(client)
 			if client.server_capabilities then
 				client.server_capabilities.semanticTokensProvider = false

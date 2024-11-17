@@ -31,7 +31,7 @@ end
 
 lspconfig.lua_ls.setup(language_configs.lua)
 -- lspconfig.denols.setup(language_configs.deno)
-lspconfig.tsserver.setup(language_configs.tsserver)
+lspconfig.ts_ls.setup(language_configs.ts_ls)
 lspconfig.clangd.setup({})
 -- HLS has been configured by haskell-tools plugin
 -- lspconfig.hls.setup({})
