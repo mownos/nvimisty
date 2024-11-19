@@ -6,10 +6,26 @@ require("mini.icons").setup({
 	},
 	filetype = {
 		-- Override highlight group (not necessary from 'mini.icons')
-		md = { glyph = "󰻲" },
 		sh = { glyph = "" },
+		html = { glyph = "", hl = "MiniIconsHTMLRed" },
 	},
 	file = {
+		["vite.config.js"] = {
+			glyph = "󰹭",
+			hl = "MiniIconsVueGreen",
+		},
+		["vite.config.ts"] = {
+			glyph = "󰹭",
+			hl = "MiniIconsVueGreen",
+		},
+		["eslint.config.js"] = {
+			glyph = "󰱺",
+			hl = "MiniIconsESlintPurple",
+		},
+		[".gitignore"] = {
+			glyph = "󰊢",
+			hl = "MiniIconsGitRed",
+		},
 		["package.json"] = {
 			glyph = "󰏖",
 			hl = "MiniIconsGreen",
