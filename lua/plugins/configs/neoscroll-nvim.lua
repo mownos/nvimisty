@@ -15,18 +15,29 @@
 
 require("neoscroll").setup({
 	-- Set any options as needed
+	mappings = {
+		["<C-u>"] = { "scroll", { "-math.ceil(vim.wo.scroll / 2)", "true", "100" } },
+		["<C-d>"] = { "scroll", { "math.ceil(vim.wo.scroll / 2)", "true", "100" } },
+		["<C-b>"] = { "scroll", { "-vim.wo.scroll", "true", "200" } },
+		["<C-f>"] = { "scroll", { "vim.wo.scroll", "true", "200" } },
+		["<C-y>"] = { "scroll", { "-0.10", "false", "100" } },
+		["<C-e>"] = { "scroll", { "0.10", "false", "100" } },
+		["zt"] = { "zt", { "250" } },
+		["zz"] = { "zz", { "250" } },
+		["zb"] = { "zb", { "250" } },
+	},
 })
 
-local t = {}
--- Syntax: t[keys] = {function, {function arguments}}
-t["<C-u>"] = { "scroll", { "-math.ceil(vim.wo.scroll / 2)", "true", "100" } }
-t["<C-d>"] = { "scroll", { "math.ceil(vim.wo.scroll / 2)", "true", "100" } }
-t["<C-b>"] = { "scroll", { "-vim.wo.scroll", "true", "200" } }
-t["<C-f>"] = { "scroll", { "vim.wo.scroll", "true", "200" } }
-t["<C-y>"] = { "scroll", { "-0.10", "false", "100" } }
-t["<C-e>"] = { "scroll", { "0.10", "false", "100" } }
-t["zt"] = { "zt", { "250" } }
-t["zz"] = { "zz", { "250" } }
-t["zb"] = { "zb", { "250" } }
+-- local t = {}
+-- -- Syntax: t[keys] = {function, {function arguments}}
+-- t["<C-u>"] = { "scroll", { "-math.ceil(vim.wo.scroll / 2)", "true", "100" } }
+-- t["<C-d>"] = { "scroll", { "math.ceil(vim.wo.scroll / 2)", "true", "100" } }
+-- t["<C-b>"] = { "scroll", { "-vim.wo.scroll", "true", "200" } }
+-- t["<C-f>"] = { "scroll", { "vim.wo.scroll", "true", "200" } }
+-- t["<C-y>"] = { "scroll", { "-0.10", "false", "100" } }
+-- t["<C-e>"] = { "scroll", { "0.10", "false", "100" } }
+-- t["zt"] = { "zt", { "250" } }
+-- t["zz"] = { "zz", { "250" } }
+-- t["zb"] = { "zb", { "250" } }
 
-require("neoscroll.config").set_mappings(t)
+require("neoscroll.config")
