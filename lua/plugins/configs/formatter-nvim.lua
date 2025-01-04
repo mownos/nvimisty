@@ -1,5 +1,6 @@
 local create_prettier_configs = require("plugins.configs.formatter-configs.prettier")
 local formatter_util = require("utils.formatter")
+local util = require("formatter.util")
 
 -- The prettier can format many languages like TypeScript, JavaScript, JSON, CSS, etc. you can
 -- config which language you want to auto format in the following table
@@ -44,6 +45,9 @@ require("formatter").setup(formatter_util.merge_filetypes({
 					stdin = true,
 				}
 			end,
+		},
+		python = {
+			require("formatter.filetypes.python").autopep8,
 		},
 		table.unpack(prettier_configs),
 	},
