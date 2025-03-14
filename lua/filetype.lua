@@ -1,5 +1,6 @@
 vim.filetype.add({
 	pattern = {
-		["%.?env.*"] = "sh",
+		["%.?env.development"] = "sh",
+		["%.?env.production"] = "sh",
 	},
 })

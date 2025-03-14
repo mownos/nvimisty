@@ -1,8 +1,20 @@
 require("codesnap").setup({
-	save_path = "~/Pictures/foo.png",
-	has_breadcrumbs = true,
-	bg_theme = "bamboo",
-	has_line_number = true,
-	show_workspace = true,
-	-- bg_padding = 0,
+	window = {
+		mac_window_bar = true,
+		shadow = 20,
+		margin = {
+			x = 30,
+			y = 50,
+		},
+	},
+	code = {
+		font_family = "CaskaydiaCove Nerd Font",
+		theme = "candy",
+	},
+	watermark = {
+		content = "CodeSnap",
+		font_family = "Pacifico",
+		color = "#ffffff",
+	},
+	background = "#ffffff00",
 })

@@ -4,6 +4,7 @@ local lsp_default_config = lspconfig.util.default_config
 local snippet = require("luasnip.loaders.from_vscode")
 local import_util = require("utils.import")
 local lsp_attach_config = require("plugins.configs.lsp-attach-config")
+local mason_lsp = require("mason-lspconfig")
 
 -- LSP kay mapping config
 vim.api.nvim_create_autocmd("LspAttach", lsp_attach_config)
@@ -18,8 +19,12 @@ lsp_default_config.capabilities =
 require("mason").setup({
 	PATH = "append",
 })
-require("mason-lspconfig").setup({
+
+mason_lsp.setup({
 	automatic_installation = true,
+})
+mason_lsp.setup_handlers({
+	["rust_analyzer"] = function() end,
 })
 
 local ls_configs_path = package.searchpath(..., package.path):match(".+/") .. "ls-configs"
@@ -47,3 +52,4 @@ lspconfig.gopls.setup({})
 lspconfig.mdx_analyzer.setup({})
 lspconfig.jsonls.setup({})
 lspconfig.pylsp.setup({})
+lspconfig.tailwindcss.setup({})

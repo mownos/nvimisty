@@ -6,6 +6,10 @@ require("plugins.lazy-install")
 vim.g.mapleader = " "
 
 require("lazy").setup({
+	{
+		"chentoast/marks.nvim",
+		event = "VeryLazy",
+	},
 	{ "windwp/nvim-autopairs", event = "InsertEnter" },
 	-- { "mistricky/codesnap.nvim", build = "make build_generator" },
 	{
@@ -23,6 +27,7 @@ require("lazy").setup({
 	-- 	event = "VeryLazy",
 	-- 	build = "make",
 	-- },
+	"j-hui/fidget.nvim",
 	"ggandor/leap.nvim",
 	"kosayoda/nvim-lightbulb",
 	"mistricky/code-link.nvim",

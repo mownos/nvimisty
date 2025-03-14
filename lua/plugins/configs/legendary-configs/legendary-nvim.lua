@@ -56,7 +56,7 @@ require("legendary").setup({
 			},
 		},
 		{
-			"m",
+			"fn",
 			{
 				n = function()
 					edit_utils.move_cursor_to_nearest_symbol()
