@@ -15,4 +15,5 @@ vim.diagnostic.config({
 	virtual_text = {
 		prefix = "",
 	},
+	virtual_lines = true,
 })
