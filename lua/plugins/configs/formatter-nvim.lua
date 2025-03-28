@@ -47,7 +47,7 @@ require("formatter").setup(formatter_util.merge_filetypes({
 			end,
 		},
 		python = {
-			require("formatter.filetypes.python").autopep8,
+			require("formatter.filetypes.python").ruff,
 		},
 		table.unpack(prettier_configs),
 	},
