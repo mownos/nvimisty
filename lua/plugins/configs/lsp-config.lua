@@ -35,7 +35,7 @@ if language_configs == nil then
 end
 
 lspconfig.lua_ls.setup(language_configs.lua)
--- lspconfig.denols.setup(language_configs.deno)
+lspconfig.denols.setup(language_configs.deno)
 lspconfig.ts_ls.setup(language_configs.ts_ls)
 lspconfig.clangd.setup({})
 -- HLS has been configured by haskell-tools plugin
@@ -53,3 +53,4 @@ lspconfig.mdx_analyzer.setup({})
 lspconfig.jsonls.setup({})
 lspconfig.pyright.setup({})
 lspconfig.tailwindcss.setup({})
+lspconfig.mdx_analyzer.setup({})

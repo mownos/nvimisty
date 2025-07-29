@@ -1,0 +1,1 @@
+require("claude-code").setup()
