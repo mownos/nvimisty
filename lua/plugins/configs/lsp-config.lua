@@ -38,7 +38,7 @@ end
 vim.lsp.config("lua_ls", language_configs.lua)
 
 vim.lsp.config("denols", {
-	root_markers = { "deno.json", "deno.jsonc" }, -- 只在 Deno 项目根启动
+	root_markers = { "deno.json", "deno.jsonc" },
 	workspace_required = true,
 })
 
@@ -46,14 +46,13 @@ vim.lsp.config("ts_ls", {
 	root_markers = { "package.json", "tsconfig.json", "jsconfig.json" },
 	workspace_required = true,
 	single_file_support = false,
-	root_dir = function(filename, bufnr)
-		-- 先检查是否是 deno 项目
+	root_dir = function(filename)
 		local deno_root = util.root_pattern("deno.json", "deno.jsonc")(filename)
+
 		if deno_root then
-			-- 如果是 deno 项目，返回 nil 阻止 ts_ls 启动
 			return nil
 		end
-		-- 否则使用正常的 root pattern
+
 		return util.root_pattern("package.json", "tsconfig.json", "jsconfig.json")(filename)
 	end,
 })
