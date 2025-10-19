@@ -64,7 +64,7 @@ startup_utils.with_safe_startup_page(function()
 			},
 			{
 				text = function(buffer)
-					local focused_icon = buffer.is_focused and "" or ""
+					local focused_icon = buffer.is_focused and "󱓻" or ""
 
 					return buffer.is_modified and "" or focused_icon
 				end,

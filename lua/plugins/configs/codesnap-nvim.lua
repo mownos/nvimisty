@@ -1,1 +1,43 @@
-require("codesnap").setup()
+require("codesnap").setup({
+	-- show_line_number = true,
+	-- snapshot_config = {
+	-- 	theme = "vercel@https://raw.githubusercontent.com/Railly/one-hunter-vscode/refs/heads/main/themes/OneHunter-Vercel-color-theme.json",
+	-- 	window = {
+	-- 		mac_window_bar = true,
+	-- 		shadow = {
+	-- 			radius = 20,
+	-- 			color = "#00000040",
+	-- 		},
+	-- 		margin = {
+	-- 			x = 82,
+	-- 			y = 82,
+	-- 		},
+	-- 		border = {
+	-- 			width = 1,
+	-- 			color = "#ffffff30",
+	-- 		},
+	-- 		title_config = {
+	-- 			color = "#ffffff",
+	-- 			font_family = "Pacifico",
+	-- 		},
+	-- 	},
+	-- 	themes_folders = {},
+	-- 	fonts_folders = {},
+	-- 	line_number_color = "#D3D3D3",
+	-- 	code_config = {
+	-- 		font_family = "CaskaydiaCove Nerd Font",
+	-- 		breadcrumbs = {
+	-- 			enable = true,
+	-- 			separator = ">",
+	-- 			color = "#80848b",
+	-- 			font_family = "CaskaydiaCove Nerd Font",
+	-- 		},
+	-- 	},
+	-- 	watermark = {
+	-- 		content = "I love CodeSnap.nvim ♥️",
+	-- 		font_family = "Pacifico",
+	-- 		color = "#ffffff",
+	-- 	},
+	-- 	background = "#ffffff",
+	-- },
+})

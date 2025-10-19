@@ -2,11 +2,11 @@ require("Comment").setup({
 	padding = true,
 	sticky = true,
 	toggler = {
-		line = "<D-/>",
+		line = "<C-/>",
 		block = "<A-/>",
 	},
 	opleader = {
-		line = "<D-/>",
+		line = "<C-/>",
 		block = "<A-/>",
 	},
 })

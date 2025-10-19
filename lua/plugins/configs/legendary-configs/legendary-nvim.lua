@@ -8,7 +8,9 @@ local copy_current_file_path = require("plugins.configs.legendary-configs.comman
 
 require("legendary").setup({
 	lazy_nvim = {
-		auto_register = true,
+		extensions = {
+			auto_register = true,
+		},
 	},
 	commands = {
 		{ ":Autosession delete", description = "Delete session via telescope" },
@@ -72,9 +74,8 @@ require("legendary").setup({
 		{ "<S-h>", { n = "<C-w>200h" }, "Move to leftmost window" },
 		{ "<S-l>", { n = "<C-w>200l" }, "Move to rightmost window" },
 		{ "<Leader><Leader>i", ":IconPickerNormal<CR>", description = "Pick icons" },
-		{ "<D-p>", ":Legendary<CR>", description = "Find commands using Legendary" },
-		{ "<D-o>", ":Telescope find_files<CR>", description = "Find files via filename suing Telescope" },
-		{ "<D-v>", '<C-R>"', description = "Paste content from clipboard" },
+		{ "<C-p>", ":Legendary<CR>", description = "Find commands using Legendary" },
+		{ "<C-f>o", ":Telescope find_files<CR>", description = "Find files via filename suing Telescope" },
 		{
 			"th",
 			function()
@@ -97,14 +98,14 @@ require("legendary").setup({
 			description = "Resume last telescope picker",
 		},
 		{
-			"<D-f>f",
+			"<C-f>f",
 			function()
 				telescope_builtin.grep_string()
 			end,
 			description = "Global match in whole project using Telescope",
 		},
 		{
-			"<D-f>r",
+			"<C-f>r",
 			function()
 				telescope_builtin.live_grep()
 			end,
@@ -127,14 +128,14 @@ require("legendary").setup({
 			description = "Delete content avoid put in clipboard",
 		},
 		{ "<S-Enter>", { i = "<Enter><ESC>O" }, description = "Insert a newline" },
-		{ "<D-b>", ":Neotree toggle<CR>", description = "Toggle neotree" },
-		{ "<D-s>", ":w<CR>", description = "Save current buffer" },
+		{ "<C-b>", ":Neotree toggle<CR>", description = "Toggle neotree" },
+		{ "<C-s>", ":w<CR>", description = "Save current buffer" },
 		{ "<C-g>", ":Neogit kind=vsplit<CR>", description = "Toggle Neogit" },
-		{ "<D-a>", { n = "gg^vG$" }, description = "Select whole buffer content" },
+		{ "<C-a>", { n = "gg^vG$" }, description = "Select whole buffer content" },
 		{ "<A-h>", { n = "<Plug>(cokeline-focus-prev)" }, description = "Switch to the previous tab" },
 		{ "<A-l>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next tab" },
 		{ "<A-b>", { n = "<Plug>(cokeline-focus-prev)" }, description = "Switch to the previous buffer" },
-		{ "<A-f>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next buffer" },
+		{ "<C-f>", { n = "<Plug>(cokeline-focus-next)" }, description = "Switch to the next buffer" },
 		{ "<A-b>", { n = "<C-o>" }, description = "Back to previous location" },
 		{ "<A-n>", { n = "<C-i>" }, description = "Back to next location" },
 		{
@@ -175,9 +176,7 @@ require("legendary").setup({
 		keep_contents = true,
 	},
 	extensions = {
-		neo_tree = true,
-		smart_split = true,
-		telescope = true,
+		lazy_nvim = true,
 	},
 	cache_path = string.format("%s", vim.fn.stdpath("cache")),
 	log_level = "info",

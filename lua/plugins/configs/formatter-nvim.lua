@@ -49,7 +49,7 @@ require("formatter").setup(formatter_util.merge_filetypes({
 		python = {
 			require("formatter.filetypes.python").ruff,
 		},
-		table.unpack(prettier_configs),
+		unpack(prettier_configs),
 	},
 
 	["*"] = {

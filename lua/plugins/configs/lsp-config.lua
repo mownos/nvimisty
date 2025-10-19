@@ -4,7 +4,7 @@ local lsp_default_config = lspconfig.util.default_config
 local snippet = require("luasnip.loaders.from_vscode")
 local import_util = require("utils.import")
 local lsp_attach_config = require("plugins.configs.lsp-attach-config")
-local mason_lsp = require("mason-lspconfig")
+local util = require("lspconfig.util")
 
 -- LSP kay mapping config
 vim.api.nvim_create_autocmd("LspAttach", lsp_attach_config)
@@ -20,12 +20,12 @@ require("mason").setup({
 	PATH = "append",
 })
 
-mason_lsp.setup({
-	automatic_installation = true,
-})
-mason_lsp.setup_handlers({
-	["rust_analyzer"] = function() end,
-})
+-- mason_lsp.setup({
+-- 	automatic_installation = true,
+-- 	handlers = {
+-- 		["rust_analyzer"] = function() end,
+-- 	},
+-- })
 
 local ls_configs_path = package.searchpath(..., package.path):match(".+/") .. "ls-configs"
 local language_configs = import_util.require_dir(ls_configs_path, "plugins.configs.ls-configs")
@@ -34,23 +34,77 @@ if language_configs == nil then
 	error("Language configs not found")
 end
 
-lspconfig.lua_ls.setup(language_configs.lua)
-lspconfig.denols.setup(language_configs.deno)
-lspconfig.ts_ls.setup(language_configs.ts_ls)
-lspconfig.clangd.setup({})
+-- lspconfig.lua_ls.setup(language_configs.lua)
+vim.lsp.config("lua_ls", language_configs.lua)
+
+vim.lsp.config("denols", {
+	root_markers = { "deno.json", "deno.jsonc" }, -- 只在 Deno 项目根启动
+	workspace_required = true,
+})
+
+vim.lsp.config("ts_ls", {
+	root_markers = { "package.json", "tsconfig.json", "jsconfig.json" },
+	workspace_required = true,
+	single_file_support = false,
+	root_dir = function(filename, bufnr)
+		-- 先检查是否是 deno 项目
+		local deno_root = util.root_pattern("deno.json", "deno.jsonc")(filename)
+		if deno_root then
+			-- 如果是 deno 项目，返回 nil 阻止 ts_ls 启动
+			return nil
+		end
+		-- 否则使用正常的 root pattern
+		return util.root_pattern("package.json", "tsconfig.json", "jsconfig.json")(filename)
+	end,
+})
+
+vim.lsp.config("clangd", {})
+
 -- HLS has been configured by haskell-tools plugin
--- lspconfig.hls.setup({})
-lspconfig.cmake.setup(language_configs.cmake)
-lspconfig.rust_analyzer.setup(language_configs.rust)
-lspconfig.rescriptls.setup({})
-lspconfig.eslint.setup({})
-lspconfig.typos_lsp.setup(language_configs.typos)
-lspconfig.dockerls.setup({})
-lspconfig.docker_compose_language_service.setup({})
-lspconfig.taplo.setup({})
-lspconfig.gopls.setup({})
-lspconfig.mdx_analyzer.setup({})
-lspconfig.jsonls.setup({})
-lspconfig.pyright.setup({})
-lspconfig.tailwindcss.setup({})
-lspconfig.mdx_analyzer.setup({})
+-- vim.lsp.config("hls", {})
+
+vim.lsp.config("basedpyright", {})
+
+vim.lsp.config("cmake", language_configs.cmake)
+
+-- vim.lsp.config("rust_analyzer", language_configs.rust)
+
+vim.lsp.config("rescriptls", {})
+
+vim.lsp.config("eslint", {})
+
+vim.lsp.config("typos_lsp", language_configs.typos)
+
+vim.lsp.config("dockerls", {})
+
+vim.lsp.config("docker_compose_language_service", {})
+
+vim.lsp.config("taplo", {})
+
+vim.lsp.config("gopls", {})
+
+vim.lsp.config("mdx_analyzer", {})
+
+vim.lsp.config("jsonls", {})
+
+vim.lsp.config("tailwindcss", {})
+
+-- Enable all configured LSPs
+vim.lsp.enable({
+	"lua_ls",
+	"denols",
+	"ts_ls",
+	"clangd",
+	"basedpyright",
+	"cmake",
+	"rescriptls",
+	"eslint",
+	"typos_lsp",
+	"dockerls",
+	"docker_compose_language_service",
+	"taplo",
+	"gopls",
+	"mdx_analyzer",
+	"jsonls",
+	"tailwindcss",
+})
